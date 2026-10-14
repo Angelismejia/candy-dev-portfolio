@@ -9,11 +9,6 @@ export interface Stat {
   label: string
 }
 
-export interface Strength {
-  title: string
-  description: string
-}
-
 export interface Profile {
   name: string
   shortName: string
@@ -22,11 +17,9 @@ export interface Profile {
   summary: string[]
   about: string[]
   highlightedSkills: string[]
-  strengths: Strength[]
   stats: Stat[]
   photoPath: string
   illustrationPath: string
   cvPath: string
   social: SocialLinks
-  isOpenToWork: boolean
 }

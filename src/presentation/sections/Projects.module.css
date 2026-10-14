@@ -2,6 +2,10 @@
   background-color: var(--lavender);
 }
 
+.title {
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
@@ -57,7 +61,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 28px;
+  padding: 32px 30px;
 }
 
 .tagline {
@@ -73,8 +77,8 @@
 
 .description {
   display: grid;
-  gap: 10px;
-  margin: 14px 0 18px;
+  gap: 14px;
+  margin: 18px 0 24px;
   font-size: 0.95rem;
   color: var(--muted);
 }

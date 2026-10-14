@@ -10,8 +10,7 @@ export function EducationSection({ education, certifications }: EducationSection
   return (
     <section id="formacion" className="section">
       <div className="container">
-        <h2 className="section-title">Formación</h2>
-        <p className="section-intro">Mi educación, certificaciones y cursos.</p>
+        <h2 className={`section-title ${styles.title}`}>Educación</h2>
 
         {education.map((item) => (
           <article key={item.id} className={styles.education}>

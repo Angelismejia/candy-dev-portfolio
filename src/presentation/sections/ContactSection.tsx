@@ -21,7 +21,7 @@ export function ContactSection({ contact, social }: ContactSectionProps) {
         {/* Caja oscura que se monta sobre el footer, como en mattfarley.ca */}
         <div className={styles.cta}>
           <h3>¿Tienes una oportunidad o proyecto en mente?</h3>
-          <p>Me encantaría escucharte. Escríbeme y hablemos.</p>
+          <p>{social.email}</p>
           <a className="btn btn-light" href={`mailto:${social.email}`}>
             Hablemos
           </a>

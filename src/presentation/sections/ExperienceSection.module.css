@@ -24,7 +24,7 @@
 }
 
 .description {
-  margin: 16px 0 24px;
+  margin: 20px 0 28px;
   color: var(--muted);
 }
 
@@ -36,8 +36,8 @@
 
 .achievements {
   display: grid;
-  gap: 6px;
-  margin-bottom: 24px;
+  gap: 10px;
+  margin-bottom: 28px;
 }
 
 .achievements li {

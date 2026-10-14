@@ -9,10 +9,7 @@ export function Projects({ projects }: ProjectsProps) {
   return (
     <section id="proyectos" className={`section ${styles.section}`}>
       <div className="container">
-        <h2 className="section-title">Mis proyectos destacados</h2>
-        <p className="section-intro">
-          Algunos de los proyectos en los que he trabajado. ¿Quieres ver más? Visita mi GitHub.
-        </p>
+        <h2 className={`section-title ${styles.title}`}>Proyectos destacados</h2>
 
         <div className={styles.grid}>
           {projects.map((project, index) => (

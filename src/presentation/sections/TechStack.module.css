@@ -38,9 +38,10 @@
 }
 
 .description {
-  min-height: 3.4em;
-  margin-bottom: 24px;
+  min-height: 5.4em;
+  margin-bottom: 28px;
   font-size: 0.95rem;
+  line-height: 1.8;
   color: var(--muted);
 }
 
@@ -51,7 +52,7 @@
 }
 
 .skills li {
-  padding: 3px 0;
+  padding: 5px 0;
   color: var(--ink);
 }
 

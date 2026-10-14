@@ -19,20 +19,6 @@ export const portfolioContent: Portfolio = {
       'Mi objetivo es seguir creciendo como desarrolladora y participar en proyectos donde pueda aprender, aportar y enfrentar nuevos retos.',
     ],
     highlightedSkills: ['C#', '.NET', 'Angular', 'React', 'TypeScript'],
-    strengths: [
-      {
-        title: 'Frontend y Backend',
-        description: 'Experiencia práctica en ambos lados: interfaces con React y Angular, APIs con C# y .NET.',
-      },
-      {
-        title: 'Trabajo en equipo',
-        description: 'Acostumbrada a trabajar con Scrum, Git y en equipos de desarrollo reales.',
-      },
-      {
-        title: 'Siempre aprendiendo',
-        description: 'Disfruto aprender de otras personas y explorar nuevas tecnologías.',
-      },
-    ],
     stats: [
       { value: '8', label: 'meses de experiencia' },
       { value: '2', label: 'empresas' },
@@ -46,7 +32,6 @@ export const portfolioContent: Portfolio = {
       linkedin: 'https://www.linkedin.com/in/candyangelismejia/',
       email: 'angelismejia06@gmail.com',
     },
-    isOpenToWork: true,
   },
 
   experiences: [

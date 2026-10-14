@@ -17,8 +17,8 @@ export function About({ profile }: AboutProps) {
           <img
             src={publicAsset(profile.illustrationPath)}
             alt=""
-            width={1254}
-            height={1254}
+            width={849}
+            height={787}
             loading="lazy"
             onError={() => setShowIllustration(false)}
           />

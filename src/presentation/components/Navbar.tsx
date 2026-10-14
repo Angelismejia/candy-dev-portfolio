@@ -6,7 +6,7 @@ const links = [
   { href: '#sobre-mi', label: 'Sobre mí' },
   { href: '#experiencia', label: 'Experiencia' },
   { href: '#proyectos', label: 'Proyectos' },
-  { href: '#formacion', label: 'Formación' },
+  { href: '#formacion', label: 'Educación' },
 ]
 
 export function Navbar() {

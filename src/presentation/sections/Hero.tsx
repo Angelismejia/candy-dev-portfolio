@@ -15,13 +15,6 @@ export function Hero({ profile }: HeroProps) {
     <section id="inicio" className={styles.hero}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.content}>
-          {profile.isOpenToWork && (
-            <p className={styles.badge}>
-              <span className={styles.dot} aria-hidden="true" />
-              Disponible para nuevas oportunidades
-            </p>
-          )}
-
           <p className={styles.hello}>Hola, soy {profile.name}</p>
           <h1 className={styles.title}>{profile.role}</h1>
 

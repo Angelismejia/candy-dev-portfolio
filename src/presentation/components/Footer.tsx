@@ -14,11 +14,7 @@ export function Footer({ social }: FooterProps) {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <Logo light />
-        <p className={styles.tagline}>
-          Aprendiendo, creciendo y construyendo,
-          <br />
-          un día a la vez.
-        </p>
+        <p className={styles.tagline}>Junior Software Developer</p>
 
         <ul className={styles.socials}>
           <li>
@@ -38,7 +34,7 @@ export function Footer({ social }: FooterProps) {
           </li>
         </ul>
 
-        <p className={styles.copy}>Hecho por mí © {currentYear}</p>
+        <p className={styles.copy}>© {currentYear} Candy Angelis Mejía Soriano</p>
       </div>
     </footer>
   )
