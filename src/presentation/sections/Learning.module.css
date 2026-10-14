@@ -1,0 +1,29 @@
+.section {
+  padding-block: clamp(56px, 8vw, 96px);
+  border-top: 1px solid var(--border);
+}
+
+.content {
+  max-width: 760px;
+  text-align: center;
+}
+
+.text {
+  color: var(--muted);
+}
+
+.areas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.areas li {
+  padding: 8px 18px;
+  border: 2px solid var(--brand);
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--brand);
+}

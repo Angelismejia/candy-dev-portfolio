@@ -1,0 +1,38 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 3px solid var(--brand);
+  border-radius: 12px;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--brand);
+}
+
+.text span {
+  color: var(--brand);
+}
+
+.light {
+  color: var(--white);
+}
+
+.light .mark {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.light .text span {
+  color: var(--sun);
+}

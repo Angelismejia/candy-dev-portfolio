@@ -1,0 +1,141 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-height);
+  background-color: var(--white);
+  transition: box-shadow 0.3s ease;
+}
+
+.scrolled {
+  box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(40, 20, 70, 0.06);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.links {
+  display: flex;
+  gap: 4px;
+}
+
+.links a {
+  display: block;
+  padding: 8px 12px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--brand);
+}
+
+/* Botón hamburguesa (solo celular/tablet) */
+.toggle {
+  display: none;
+  position: relative;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 2px solid var(--brand);
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.toggle span {
+  position: absolute;
+  left: 12px;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--brand);
+  transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+}
+
+.toggle span:nth-child(1) {
+  top: 14px;
+}
+
+.toggle span:nth-child(2) {
+  top: 20px;
+}
+
+.toggle span:nth-child(3) {
+  top: 26px;
+}
+
+.toggleOpen span:nth-child(1) {
+  top: 20px;
+  transform: rotate(45deg);
+}
+
+.toggleOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggleOpen span:nth-child(3) {
+  top: 20px;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 820px) {
+  .header {
+    height: 72px;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: calc(100dvh - 72px);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    padding: 16px var(--gutter) 40px;
+    background-color: var(--white);
+    border-top: 1px solid var(--border);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  }
+
+  .open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .links a {
+    padding: 18px 4px;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.15rem;
+  }
+
+  .cta {
+    min-height: 52px;
+  }
+}

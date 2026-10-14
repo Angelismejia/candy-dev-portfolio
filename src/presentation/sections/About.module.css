@@ -1,0 +1,45 @@
+.about {
+  scroll-margin-top: 72px;
+}
+
+.illustration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -6px;
+}
+
+.illustration img {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Franja de color de marca (como la morada de Matt Farley) */
+.band {
+  padding-top: clamp(64px, 9vw, 110px);
+  /* espacio extra abajo: la tarjeta de tecnologías se monta encima */
+  padding-bottom: clamp(140px, 16vw, 200px);
+  color: var(--white);
+  background-color: var(--brand);
+}
+
+.content {
+  max-width: 760px;
+  text-align: center;
+}
+
+.content h2 {
+  margin-bottom: 24px;
+  font-size: clamp(1.7rem, 1.3rem + 1.8vw, 2.4rem);
+  color: var(--white);
+}
+
+.content h2 span {
+  color: var(--sun);
+}
+
+.content p {
+  margin-bottom: 14px;
+  font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.15rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+}

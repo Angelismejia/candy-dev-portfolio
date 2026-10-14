@@ -1,0 +1,128 @@
+.hero {
+  padding-block: clamp(32px, 6vw, 72px) clamp(64px, 9vw, 112px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 72px);
+}
+
+/* ---------- Caricatura ---------- */
+/* Marco en forma de arco con el mismo lavanda del fondo de la imagen */
+.visual {
+  justify-self: center;
+  width: 100%;
+  max-width: 430px;
+  overflow: hidden;
+  border-radius: 999px 999px 32px 32px;
+  background-color: #f8edfd;
+  box-shadow: 0 0 0 10px var(--white), 0 0 0 12px var(--brand-soft), 0 30px 60px -30px rgba(176, 23, 154, 0.45);
+}
+
+.photo {
+  width: 100%;
+  padding-top: 24px;
+}
+
+.initials {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 433 / 505;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  color: var(--brand);
+}
+
+/* ---------- Texto ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 6px 16px 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  background-color: var(--lavender);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+}
+
+.hello {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: clamp(2.3rem, 1.4rem + 3.6vw, 3.6rem);
+}
+
+.summary {
+  max-width: 52ch;
+  margin-bottom: 10px;
+  font-size: clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem);
+  color: var(--muted);
+}
+
+.skills {
+  margin: 20px 0 32px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ---------- Celular y tablet ---------- */
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .summary {
+    margin-inline: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  /* En celular la caricatura va arriba del texto */
+  .visual {
+    order: -1;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .actions :global(.btn) {
+    flex: 1 1 100%;
+  }
+
+  .visual {
+    max-width: 240px;
+  }
+}
