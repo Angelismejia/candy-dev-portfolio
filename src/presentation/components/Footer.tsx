@@ -3,6 +3,8 @@ import { GitHubIcon, LinkedInIcon, MailIcon } from './Icons'
 import { Logo } from './Logo'
 import styles from './Footer.module.css'
 
+const currentYear = new Date().getFullYear()
+
 interface FooterProps {
   social: SocialLinks
 }
@@ -36,7 +38,7 @@ export function Footer({ social }: FooterProps) {
           </li>
         </ul>
 
-        <p className={styles.copy}>Hecho por mí © {new Date().getFullYear()}</p>
+        <p className={styles.copy}>Hecho por mí © {currentYear}</p>
       </div>
     </footer>
   )
