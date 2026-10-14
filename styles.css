@@ -1,0 +1,528 @@
+/* =========================================
+   1. Variables (colores, tamaños, sombras)
+   ========================================= */
+:root {
+    --bg: #fbf8fb;
+    --surface: #ffffff;
+    --text: #1f1630;
+    --muted: #6b6278;
+    --accent: #c2187a;
+    --accent-hover: #a01365;
+    --accent-soft: #fde7f2;
+    --border: #ece4ee;
+    --shadow: 0 10px 30px rgba(60, 20, 70, 0.08);
+
+    --radius: 16px;
+    --max-width: 1100px;
+    --header-height: 68px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #120e18;
+        --surface: #1c1625;
+        --text: #f3eef7;
+        --muted: #a79db3;
+        --accent: #f472b6;
+        --accent-hover: #f9a8d4;
+        --accent-soft: #3a1a2e;
+        --border: #2c2338;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* =========================================
+   2. Reset y estilos base
+   ========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: var(--accent);
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* =========================================
+   3. Header y menú
+   ========================================= */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    min-height: var(--header-height);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    gap: 4px;
+}
+
+nav a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+    background-color: var(--accent-soft);
+}
+
+/* =========================================
+   4. Secciones
+   ========================================= */
+main > section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 20px;
+    scroll-margin-top: var(--header-height);
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading p {
+    margin: 0 0 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.section-heading h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+}
+
+/* =========================================
+   5. Inicio (hero)
+   ========================================= */
+.hero {
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-soft), transparent 70%);
+    z-index: -1;
+}
+
+.hero-hello {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    max-width: 14ch;
+}
+
+.hero-role {
+    margin: 16px 0 24px;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.hero-text {
+    max-width: 60ch;
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+.hero .tags {
+    margin: 16px 0 32px;
+}
+
+/* =========================================
+   6. Componentes reutilizables
+   ========================================= */
+
+/* Botones */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-outline {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-soft);
+}
+
+.btn-ghost {
+    color: var(--text);
+}
+
+.btn-ghost:hover {
+    color: var(--accent);
+}
+
+.btn-small {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+/* Etiquetas (pastillitas) */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags li {
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    background-color: var(--accent-soft);
+}
+
+.tags-small li {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+}
+
+/* Lista con checks */
+.check-list {
+    margin-bottom: 1rem;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 6px;
+}
+
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* Tarjetas */
+.card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.card hgroup {
+    margin-bottom: 16px;
+}
+
+.card hgroup h3 {
+    margin-bottom: 4px;
+}
+
+.card hgroup p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.card h4 {
+    margin: 20px 0 10px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.card > p {
+    color: var(--muted);
+}
+
+.date {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* Grillas */
+.grid {
+    display: grid;
+    gap: 24px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* =========================================
+   7. Detalles de cada sección
+   ========================================= */
+.about {
+    max-width: 70ch;
+    font-size: 1.1rem;
+}
+
+.about p {
+    color: var(--muted);
+}
+
+.about strong {
+    color: var(--text);
+}
+
+.highlight {
+    display: inline-block;
+    margin: 32px 0 0;
+    padding: 12px 24px;
+    border-radius: 999px;
+    color: var(--text);
+    background-color: var(--accent-soft);
+}
+
+.highlight strong {
+    color: var(--accent);
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+}
+
+.project .actions {
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+.education,
+.learning {
+    max-width: 800px;
+}
+
+.contact {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    border-radius: var(--radius);
+    text-align: center;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.contact p {
+    color: var(--muted);
+}
+
+.contact .tags,
+.contact .actions {
+    justify-content: center;
+    margin: 16px 0 24px;
+}
+
+.contact-cta {
+    margin-top: 24px;
+    font-size: 1.2rem;
+}
+
+.contact-cta strong {
+    color: var(--accent);
+}
+
+/* =========================================
+   8. Footer
+   ========================================= */
+.site-footer {
+    padding: 32px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* =========================================
+   9. Responsive (tablet y celular)
+   ========================================= */
+@media (max-width: 900px) {
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding-top: 12px;
+    }
+
+    nav {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    nav ul {
+        padding-bottom: 8px;
+    }
+
+    nav a {
+        white-space: nowrap;
+    }
+
+    main > section {
+        padding: 56px 16px;
+        scroll-margin-top: 110px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 72px;
+    }
+
+    .hero::before {
+        width: 240px;
+        height: 240px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .contact {
+        padding: 36px 20px;
+    }
+}
