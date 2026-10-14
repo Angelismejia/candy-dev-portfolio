@@ -1,5 +1,9 @@
 .hero {
-  padding-block: clamp(32px, 6vw, 72px) clamp(64px, 9vw, 112px);
+  padding-top: clamp(32px, 6vw, 72px);
+  /* mismo lavanda que el fondo de la caricatura */
+  background-color: var(--hero-bg);
+  /* línea morada que divide la sección */
+  border-bottom: 4px solid var(--brand);
 }
 
 .grid {
@@ -10,20 +14,16 @@
 }
 
 /* ---------- Caricatura ---------- */
-/* Marco en forma de arco con el mismo lavanda del fondo de la imagen */
+/* Sin marco: la imagen se apoya directo sobre la línea morada */
 .visual {
+  align-self: end;
   justify-self: center;
   width: 100%;
   max-width: 430px;
-  overflow: hidden;
-  border-radius: 999px 999px 32px 32px;
-  background-color: #f8edfd;
-  box-shadow: 0 0 0 10px var(--white), 0 0 0 12px var(--brand-soft), 0 30px 60px -30px rgba(176, 23, 154, 0.45);
 }
 
 .photo {
   width: 100%;
-  padding-top: 24px;
 }
 
 .initials {
@@ -36,6 +36,10 @@
 }
 
 /* ---------- Texto ---------- */
+.content {
+  padding-bottom: clamp(48px, 7vw, 88px);
+}
+
 .hello {
   margin-bottom: 14px;
   font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
@@ -90,9 +94,11 @@
     justify-content: center;
   }
 
-  /* En celular la caricatura va arriba del texto */
+  .content {
+    padding-bottom: 0;
+  }
+
   .visual {
-    order: -1;
     max-width: 300px;
   }
 }
