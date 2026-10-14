@@ -1,5 +1,5 @@
 import type { SocialLinks } from '../../domain/entities/Profile'
-import { GitHubIcon, LinkedInIcon, MailIcon } from './Icons'
+import { GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon } from './Icons'
 import { Logo } from './Logo'
 import styles from './Footer.module.css'
 
@@ -25,6 +25,11 @@ export function Footer({ social }: FooterProps) {
           <li>
             <a href={social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <LinkedInIcon size={20} />
+            </a>
+          </li>
+          <li>
+            <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <InstagramIcon size={20} />
             </a>
           </li>
           <li>

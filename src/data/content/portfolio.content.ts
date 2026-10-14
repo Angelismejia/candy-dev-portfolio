@@ -30,6 +30,7 @@ export const portfolioContent: Portfolio = {
     social: {
       github: 'https://github.com/Angelismejia',
       linkedin: 'https://www.linkedin.com/in/candyangelismejia/',
+      instagram: 'https://www.instagram.com/mejia_angelis/',
       email: 'angelismejia06@gmail.com',
     },
   },
