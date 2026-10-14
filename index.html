@@ -3,10 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candy | Portfolio</title>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#experiencias">Experiencia</a></li>
+                <li><a href="#tecnologias">Tecnologías</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#educacion">Educación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
         <section id="inicio">
             <h1>Candy Angelis Mejía Soriano</h1>
@@ -28,8 +43,11 @@
                 <li>TypeScript</li>
             </ul>
 
-            <a href="https://www.linkedin.com/in/candyangelismejia/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Angelismejia" target="_blank">GitHub</a>
+            <a href="#proyectos">Ver proyectos</a>
+            <a href="cv-candy-mejia.pdf" download>Descargar CV</a>
+            <a href="https://github.com/Angelismejia" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/candyangelismejia/" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
         </section>
 
         <section id="sobre-mi">
@@ -107,6 +125,7 @@
 
             </article>
 
+            <p><strong>8 meses</strong> de experiencia en desarrollo de software</p>
         </section>
 
 
@@ -156,24 +175,187 @@
             <h2>Proyectos</h2>
 
             <article>
-                <h3>BetterMe</h3>
-                <p>Aplicación full-stack para organizar objetivos, tareas y hábitos.</p>
+                <hgroup>
+                    <h3>BetterMe</h3>
+                    <p>Seguimiento de objetivos, tareas y hábitos.</p>
+                </hgroup>
+
+                <p>Aplicación full-stack para organizar objetivos, tareas y hábitos, permitiendo a los usuarios
+                    registrar y visualizar su progreso.</p>
+
+                <p>Incluye perfiles, diario personal, insignias, rachas, seguidores y chat en tiempo real.</p>
+
+                <h4>Tecnologías</h4>
+                <ul>
+                    <li>Angular</li>
+                    <li>ASP.NET Core</li>
+                    <li>C#</li>
+                    <li>SQL Server</li>
+                    <li>Entity Framework Core</li>
+                    <li>SignalR</li>
+                    <li>JWT</li>
+                    <li>Clean Architecture</li>
+                </ul>
+
+                <a href="#" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                <a href="https://github.com/Angelismejia/BetterMe" target="_blank" rel="noopener noreferrer">Ver
+                    código</a>
+
             </article>
 
             <article>
                 <h3>Kapicua</h3>
                 <p>Aplicación para gestionar partidas de dominó, jugadores, resultados y estadísticas.</p>
+
+                <p>Permite registrar partidas y rondas, consultar historiales, visualizar estadísticas, seleccionar
+                    campeones y sincronizar información entre dispositivos.</p>
+
+                <h4>Tecnologías</h4>
+                <ul>
+                    <li>Flutter</li>
+                    <li>Dart</li>
+                    <li>Firebase / Firestore</li>
+                    <li>Provider</li>
+                    <li>Clean Architecture</li>
+                </ul>
+
+                <a href="#" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                <a href="https://github.com/Angelismejia/Kapicua" target="_blank" rel="noopener noreferrer">Ver
+                    código</a>
+
             </article>
 
             <article>
+
                 <h3>Sistema de Predicción de Texto Especulativo</h3>
-                <p>Sistema que predice y sugiere palabras mientras el usuario escribe.</p>
+
+                <p>Proyecto desarrollado en equipo para la asignatura de Programación Paralela del ITLA, donde desempeñé
+                    el rol de líder del equipo.</p>
+
+                <p>El sistema analiza documentos y utiliza procesamiento paralelo para predecir posibles palabras
+                    mientras el usuario escribe.</p>
+
+                <h4>Tecnologías</h4>
+                <ul>
+                    <li>C#</li>
+                    <li>.NET</li>
+                    <li>ASP.NET Core</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>OpenXML</li>
+                    <li>iText7</li>
+                    <li>JavaScript</li>
+                    <li>Parallel Programming</li>
+                    <li>Task Parallel Library (TPL)</li>
+                </ul>
+
+                <a href="#" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                <a href="https://github.com/Angelismejia/Sistema-de-Prediccion-de-Texto-Especulativo" target="_blank"
+                    rel="noopener noreferrer">Ver código</a>
             </article>
         </section>
 
+        <section id="educacion">
+            <h2>Educación</h2>
 
+            <article>
+                <h3>Técnico Superior en Desarrollo de Software</h3>
+                <p>Instituto Tecnológico de Las Américas (ITLA)</p>
+                <p>Formación en desarrollo frontend y backend, programación orientada a objetos, bases de datos, APIs,
+                    arquitectura de software y desarrollo de aplicaciones.</p>
+                <p>2023 - 2026</p>
+            </article>
+        </section>
 
+        <section id="certificaciones">
+            <h2>Certificaciones y Cursos</h2>
+
+            <article>
+                <h3>Desarrollo Web con Angular</h3>
+                <p>Formación enfocada en el desarrollo de aplicaciones web utilizando Angular y TypeScript.
+                </p>
+                <p>2026</p>
+            </article>
+
+            <article>
+                <h3>Desarrollo Full Stack — INDOTEL</h3>
+                <p>Formación enfocada en tecnologías y conceptos de desarrollo frontend y backend.</p>
+                <p>2026</p>
+            </article>
+
+            <article>
+                <h3>Scrum Fundamentals Certified</h3>
+                <p>Fundamentos de Scrum, metodologías ágiles y trabajo colaborativo.</p>
+                <p>2023</p>
+            </article>
+            <article>
+                <h3>PC Hardware — Cisco</h3>
+                <p>Fundamentos de hardware, componentes de computadoras y soporte técnico.</p>
+                <p>2023</p>
+            </article>
+        </section>
+
+        <section id="aprendizaje">
+            <hgroup>
+                <p>En constante aprendizaje</p>
+                <h2>Siempre aprendiendo</h2>
+            </hgroup>
+
+            <p>Una de las cosas que más disfruto del desarrollo de software es que siempre existe algo nuevo por
+                aprender.</p>
+
+            <p>Actualmente continúo fortaleciendo mis conocimientos en:</p>
+            <ul>
+                <li>Desarrollo de aplicaciones móviles con Flutter.</li>
+                <li>Desarrollo de aplicaciones web con Angular y React.</li>
+                <li>Desarrollo backend con C# y .NET.</li>
+                <li>Bases de datos SQL Server y MongoDB.</li>
+                <li>Metodologías ágiles y trabajo colaborativo.</li>
+            </ul>
+
+            <p>Me gusta practicar constantemente, explorar nuevas tecnologías y aprender de otros desarrolladores.</p>
+        </section>
+
+        <section id="contacto">
+            <hgroup>
+                <p>Contacto</p>
+                <h2>Trabajemos juntos</h2>
+            </hgroup>
+
+            <p>Estoy abierta a nuevas oportunidades donde pueda seguir creciendo profesionalmente, aportar mis
+                conocimientos y adquirir nuevas experiencias.</p>
+
+            <p>Me interesan oportunidades como:</p>
+            <ul>
+                <li>Desarrolladora de Software Junior</li>
+                <li>.NET Developer</li>
+                <li>Desarrolladora Frontend</li>
+                <li>Desarrolladora Backend</li>
+                <li>Desarrolladora Full Stack</li>
+            </ul>
+
+            <article>
+                <h3>Candy Angelis Mejía Soriano</h3>
+
+                <h4>LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/candyangelismejia/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+
+                <h4>GitHub</h4>
+                <a href="https://github.com/Angelismejia" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+                <h4>Correo Electrónico</h4>
+                <a href="mailto:angelismejia06@gmail.com">angelismejia06@gmail.com</a>
+            </article>
+
+            <p>¿Tienes una oportunidad o proyecto en mente?</p>
+            <p>¡Hablemos!</p>
+        </section>
     </main>
+
+    <footer>
+        <p>© 2026 Candy Angelis Mejía Soriano</p>
+    </footer>
 </body>
 
 </html>
