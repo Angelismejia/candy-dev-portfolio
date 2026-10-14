@@ -5,11 +5,13 @@
 .illustration {
   display: flex;
   justify-content: center;
+  /* espacio arriba; abajo nada: la imagen queda pegada a la franja */
+  padding-top: clamp(48px, 7vw, 80px);
 }
 
 .illustration img {
   width: 100%;
-  max-width: 560px;
+  max-width: clamp(240px, 30vw, 360px);
 }
 
 /* Franja de color de marca (como la morada de Matt Farley) */
