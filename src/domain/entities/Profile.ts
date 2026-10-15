@@ -3,6 +3,8 @@ export interface SocialLinks {
   linkedin: string
   instagram: string
   email: string
+  /** Número con código de país y solo dígitos, ej: 18095551234. Vacío = sin botón de WhatsApp */
+  whatsapp: string
 }
 
 export interface Stat {

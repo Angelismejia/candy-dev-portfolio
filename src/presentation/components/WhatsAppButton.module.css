@@ -1,0 +1,103 @@
+.button {
+  position: fixed;
+  /* respeta la barra de gestos / muesca del celular */
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: var(--white);
+  background-color: #25d366;
+  box-shadow: 0 8px 24px rgba(18, 140, 70, 0.35);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  /* aparece con un rebote un ratito después de cargar */
+  animation: popIn 0.6s 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* onda que late alrededor para llamar la atención */
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: #25d366;
+  z-index: -1;
+  animation: pulse 2.4s 2s ease-out infinite;
+}
+
+.button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(18, 140, 70, 0.45);
+}
+
+/* solo gira el ícono, así la etiqueta "¡Escríbeme!" no se tuerce */
+.button svg {
+  transition: rotate 0.25s ease;
+}
+
+.button:hover svg {
+  rotate: -10deg;
+}
+
+/* Etiqueta a la izquierda del botón, solo con mouse */
+.tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink);
+  background-color: var(--surface);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  translate: 8px 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, translate 0.2s ease;
+}
+
+/* la etiqueta solo sale con mouse: en pantallas táctiles el hover se queda "pegado" */
+@media (hover: hover) {
+  .button:hover .tooltip {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* usa scale (no transform) para no bloquear el efecto hover */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    scale: 0.3;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@media (max-width: 600px) {
+  .button {
+    width: 54px;
+    height: 54px;
+  }
+
+  .tooltip {
+    display: none;
+  }
+}
