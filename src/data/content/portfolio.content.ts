@@ -18,7 +18,6 @@ export const portfolioContent: Portfolio = {
       'Disfruto trabajar en equipo, aprender de otras personas, conocer nuevas tecnologías y fortalecer mis conocimientos mediante la práctica constante.',
       'Mi objetivo es seguir creciendo como desarrolladora y participar en proyectos donde pueda aprender, aportar y enfrentar nuevos retos.',
     ],
-    highlightedSkills: ['.NET', 'C#', 'Angular', 'React', 'TypeScript'],
     stats: [
       { value: '8', label: 'meses de experiencia' },
       { value: '2', label: 'empresas' },
@@ -112,13 +111,23 @@ export const portfolioContent: Portfolio = {
     ],
     note: {
       title: 'Full-stack con Clean Architecture',
-      text: 'Angular en el frontend y ASP.NET Core + SQL Server en el backend.',
+      text: 'Angular en el frontend y ASP.NET Core + PostgreSQL en el backend.',
     },
     motivation:
       'BetterMe nació de una necesidad personal: organizar mi día y mantener mis metas siempre visibles. Comprobé que cuando mis objetivos y tareas están escritos y a la vista, mi compromiso con cumplirlos aumenta. Quise llevar esa experiencia más allá de lo individual e incorporé funciones sociales para compartir el progreso con amigos y motivarnos mutuamente, convirtiendo la productividad en una experiencia más cercana y constante.',
-    technologies: ['Angular', 'ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework Core', 'SignalR', 'JWT'],
-    // ✏️ Pon aquí las capturas, ej: 'images/betterme/betterme-1.png' (9 ideal, verticales tipo celular)
-    screenshots: [],
+    technologies: ['Angular', 'ASP.NET Core', 'C#', 'PostgreSQL', 'Entity Framework Core', 'SignalR', 'JWT'],
+    // 9 capturas verticales tipo celular; la galería las reparte en 3 columnas
+    screenshots: [
+      'images/betterme/betterme-1-landing.webp',
+      'images/betterme/betterme-2-dashboard.webp',
+      'images/betterme/betterme-3-objetivos.webp',
+      'images/betterme/betterme-4-tareas.webp',
+      'images/betterme/betterme-5-estadisticas.webp',
+      'images/betterme/betterme-6-perfil.webp',
+      'images/betterme/betterme-7-chat.webp',
+      'images/betterme/betterme-8-calendario.webp',
+      'images/betterme/betterme-9-insignias.webp',
+    ],
     demoUrl: 'https://better-me-d6gugua2dnhucpfg.centralus-01.azurewebsites.net/',
     repositoryUrl: 'https://github.com/Angelismejia/SeguimientoDeObjetivos',
   },

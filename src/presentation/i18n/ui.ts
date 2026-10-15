@@ -27,6 +27,7 @@ const es = {
     hello: 'Hola, soy',
     viewProjects: 'Ver proyectos',
     downloadCv: 'Descargar CV',
+    available: 'Disponible para nuevas oportunidades',
     photoAlt: (name: string) => `Caricatura de ${name} con su laptop`,
   },
   about: {
@@ -139,6 +140,7 @@ const en: UiText = {
     hello: "Hi, I'm",
     viewProjects: 'View projects',
     downloadCv: 'Download CV',
+    available: 'Open to new opportunities',
     photoAlt: (name: string) => `Illustration of ${name} with her laptop`,
   },
   about: {

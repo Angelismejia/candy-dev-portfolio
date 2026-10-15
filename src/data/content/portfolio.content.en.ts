@@ -87,7 +87,7 @@ export const portfolioContentEn: Portfolio = {
     ],
     note: {
       title: 'Full-stack with Clean Architecture',
-      text: 'Angular on the frontend and ASP.NET Core + SQL Server on the backend.',
+      text: 'Angular on the frontend and ASP.NET Core + PostgreSQL on the backend.',
     },
     motivation:
       'BetterMe was born from a personal need: organizing my day and keeping my goals always in sight. I found that when my goals and tasks are written down and visible, my commitment to achieving them grows. I wanted to take that experience beyond the individual, so I added social features to share progress with friends and motivate each other, turning productivity into a closer and more consistent experience.',

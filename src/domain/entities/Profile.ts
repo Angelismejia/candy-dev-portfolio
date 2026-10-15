@@ -19,7 +19,6 @@ export interface Profile {
   role: string
   summary: string[]
   about: string[]
-  highlightedSkills: string[]
   stats: Stat[]
   photoPath: string
   illustrationPath: string
