@@ -54,6 +54,8 @@
     </script>
 
     <script>
+        // Con JavaScript activo se muestra la pantalla de carga (splashScreen.ts la quita)
+        document.documentElement.classList.add('con-splash');
         // Aplica el tema y el idioma guardados antes de pintar, para que no parpadee
         try {
             var tema = localStorage.getItem('tema');
@@ -67,6 +69,8 @@
     <!-- media="print" = no bloquea el primer pintado; main.tsx la activa en cuanto carga -->
     <link id="fuentes" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet" media="print">
+    <!-- estilos de la pantalla de carga: van aquí para que esté lista en el primer pintado -->
+    <link rel="stylesheet" href="/src/presentation/styles/splash.css">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
             rel="stylesheet">
@@ -80,6 +84,27 @@
             <a href="https://github.com/Angelismejia">github.com/Angelismejia</a>.
         </p>
     </noscript>
+    <!-- Pantalla de carga: gatito + tarjeta con el logo + tres puntos (estilos en splash.css) -->
+    <div id="splash" class="splash" aria-hidden="true">
+        <img class="splash-gato" src="/images/splash-gato.webp" alt="" width="460" height="542" fetchpriority="high">
+        <div class="splash-tarjeta">
+            <!-- mismo ícono que LogoMark (Logo.tsx) -->
+            <svg viewBox="0 0 40 40" fill="none">
+                <defs>
+                    <linearGradient id="splash-degradado" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#8317FF" />
+                        <stop offset="1" stop-color="#D414D8" />
+                    </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="36" height="36" rx="10" stroke="url(#splash-degradado)" stroke-width="3" />
+                <path d="M22.14 13.87A8 8 0 1 0 22.14 26.13" stroke="url(#splash-degradado)" stroke-width="3.2" stroke-linecap="round" />
+                <circle cx="28.5" cy="16.5" r="1.9" fill="url(#splash-degradado)" />
+                <circle cx="28.5" cy="23.5" r="1.9" fill="url(#splash-degradado)" />
+            </svg>
+            <span class="splash-texto">Candy<span>.dev</span></span>
+        </div>
+        <div class="splash-puntos"><span></span><span></span><span></span></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 </body>

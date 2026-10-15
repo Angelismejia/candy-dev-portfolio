@@ -12,9 +12,10 @@ function contentSecurityPolicy(): Plugin {
     transformIndexHtml: {
       order: 'post',
       handler(html) {
-        // el script del tema va en línea: se permite solo ese, por su huella (hash)
+        // el script del tema va en línea: se permite solo ese, por su huella (hash).
+        // El navegador convierte los saltos \r\n (Windows) en \n antes de calcularla, así que aquí también
         const inlineScripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(
-          ([, code]) => `'sha256-${createHash('sha256').update(code).digest('base64')}'`,
+          ([, code]) => `'sha256-${createHash('sha256').update(code.replace(/\r\n?/g, '\n')).digest('base64')}'`,
         )
 
         const policy = [

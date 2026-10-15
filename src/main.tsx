@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 import './presentation/styles/global.css'
 import { App } from './presentation/App'
 import { LanguageProvider } from './presentation/i18n/LanguageProvider'
+import { hideSplashWhenReady } from './presentation/splashScreen'
 
 // Activa las fuentes de Google (en index.html cargan sin bloquear la página)
 document.getElementById('fuentes')?.setAttribute('media', 'all')
@@ -15,3 +16,5 @@ createRoot(document.getElementById('root')!).render(
     </LanguageProvider>
   </StrictMode>,
 )
+
+hideSplashWhenReady()
