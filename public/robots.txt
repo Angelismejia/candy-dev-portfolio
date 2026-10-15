@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://angelismejia.github.io/candy-dev-portfolio/sitemap.xml
+Sitemap: https://candy-dev-portfolio.netlify.app/sitemap.xml

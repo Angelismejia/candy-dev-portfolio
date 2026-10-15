@@ -11,7 +11,7 @@ export function usePortfolio() {
   return getPortfolio.execute(language)
 }
 
-// Arma rutas a archivos de /public respetando la base de GitHub Pages
+// Arma rutas a archivos de /public respetando la base de Vite (BASE_URL)
 export function publicAsset(path: string) {
   return `${import.meta.env.BASE_URL}${path}`
 }

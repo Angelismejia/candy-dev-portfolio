@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 import { defineConfig, type Plugin } from 'vite'
 
 // Content Security Policy (recomendada por OWASP): el navegador solo carga scripts, estilos,
-// fuentes y conexiones de los orígenes de esta lista. GitHub Pages no permite cabeceras HTTP,
-// así que va como <meta> y solo en el build (en desarrollo rompería la recarga de Vite).
+// fuentes y conexiones de los orígenes de esta lista. Va como <meta> dentro del HTML
+// y solo en el build (en desarrollo rompería la recarga de Vite).
 function contentSecurityPolicy(): Plugin {
   return {
     name: 'content-security-policy',

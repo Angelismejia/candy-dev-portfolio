@@ -2,7 +2,7 @@
 // y aquí solo se decide cuándo quitarla.
 
 /** Tiempo mínimo en pantalla, para que la animación se alcance a ver aunque todo cargue al instante */
-const MIN_MS = 900
+const MIN_MS = 1800
 /** Pase lo que pase, a los 3 s se quita: nunca bloquea la entrada al portafolio */
 const MAX_MS = 3000
 /** Lo que dura el fade-out en splash.css (más un margen por si no llega transitionend) */
