@@ -1,3 +1,7 @@
+.title {
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
@@ -5,11 +9,13 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   padding: clamp(26px, 4vw, 44px);
   border: 1px solid var(--border);
   border-top: 5px solid var(--brand);
   border-radius: var(--radius-lg);
-  background-color: var(--white);
+  background-color: var(--surface);
   box-shadow: var(--shadow);
 }
 
@@ -17,10 +23,29 @@
   font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.75rem);
 }
 
+.header h3 a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 5px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.header h3 a:hover {
+  color: var(--brand);
+  text-decoration-color: currentColor;
+}
+
 .header p {
   margin-top: 4px;
   font-weight: 600;
   color: var(--brand);
+}
+
+/* fechas y modalidad: más discretas que el puesto */
+.header .meta {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .description {
@@ -53,10 +78,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  color: var(--on-sun);
   background-color: var(--sun);
   box-shadow: 0 0 0 2px var(--brand);
 }
 
 .technologies {
-  color: var(--ink);
+  /* chips siempre abajo de la tarjeta */
+  margin-top: auto;
+  padding-top: 24px;
 }
