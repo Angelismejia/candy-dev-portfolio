@@ -6,6 +6,7 @@ import { portfolioContent as es } from './portfolio.content'
 export const portfolioContentEn: Portfolio = {
   profile: {
     ...es.profile,
+    cvPath: 'cv-candy-mejia-en.pdf',
     summary: [
       'Software Developer graduated from ITLA, with experience in frontend and backend development.',
       'I enjoy learning, working as part of a team, exploring new technologies and turning ideas into real solutions.',

@@ -92,7 +92,7 @@ export const portfolioContent: Portfolio = {
       id: 'tools',
       title: 'Herramientas',
       description: 'Lo que uso día a día para construir, colaborar y desplegar.',
-      skills: ['Git', 'GitHub', 'Docker', 'Azure', 'Canva'],
+      skills: ['Git', 'GitHub', 'Netlify', 'Azure', 'Canva'],
     },
   ],
 
