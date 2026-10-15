@@ -178,7 +178,7 @@ export const portfolioContent: Portfolio = {
       institutionUrl: 'https://educapermanente.itla.edu.do/',
       description:
         'Formación en desarrollo frontend y backend, programación orientada a objetos, bases de datos, APIs, arquitectura de software y desarrollo de aplicaciones.',
-      period: '2023 – 2026',
+      period: '2023 – 2025',
     },
   ],
 
