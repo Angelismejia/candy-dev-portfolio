@@ -46,6 +46,6 @@ function contentSecurityPolicy(): Plugin {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), contentSecurityPolicy()],
-  // Nombre del repo: GitHub Pages publica en angelismejia.github.io/candy-dev-portfolio/
-  base: '/candy-dev-portfolio/',
+  // Netlify publica en la raíz del dominio: candy-dev-portfolio.netlify.app/
+  base: '/',
 })
