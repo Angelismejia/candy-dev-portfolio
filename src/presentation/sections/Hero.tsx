@@ -28,11 +28,7 @@ export function Hero({ profile }: HeroProps) {
             </p>
           ))}
 
-          <p className={styles.available}>
-            {/* el punto verde late suavecito, como un "en línea" */}
-            <span className={styles.dot} aria-hidden="true" />
-            {t.hero.available}
-          </p>
+          <p className={styles.available}>{t.hero.available}</p>
 
           <div className={styles.actions}>
             <a className="btn btn-solid" href="#proyectos">

@@ -103,9 +103,7 @@
 }
 
 .available {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-block;
   margin: 28px 0 40px;
   padding: 8px 18px;
   border: 1px solid var(--border);
@@ -117,42 +115,6 @@
   box-shadow: var(--shadow);
 }
 
-.dot {
-  position: relative;
-  flex-shrink: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #22c55e;
-}
-
-/* onda que sale del punto y se desvanece */
-.dot::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background-color: #22c55e;
-  animation: pulse 1.8s ease-out infinite;
-}
-
-@keyframes pulse {
-  from {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  to {
-    transform: scale(2.6);
-    opacity: 0;
-  }
-}
-
-/* quien pide menos movimiento ve el punto quieto */
-@media (prefers-reduced-motion: reduce) {
-  .dot::after {
-    animation: none;
-  }
-}
 
 .actions {
   display: flex;

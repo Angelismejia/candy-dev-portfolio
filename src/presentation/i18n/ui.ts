@@ -140,7 +140,7 @@ const en: UiText = {
     hello: "Hi, I'm",
     viewProjects: 'View projects',
     downloadCv: 'Download CV',
-    available: 'Open to new opportunities',
+    available: 'Available for work',
     photoAlt: (name: string) => `Illustration of ${name} with her laptop`,
   },
   about: {
