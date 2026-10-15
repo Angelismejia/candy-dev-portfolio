@@ -1,9 +1,41 @@
 .section {
+  position: relative;
+  /* la sección recorta los círculos de fondo */
+  overflow: clip;
+  padding-bottom: var(--section-space);
   background-color: var(--lavender);
 }
 
-.title {
+/* Mismo círculo suave que el del proyecto destacado, pero abajo a la izquierda */
+.circle {
+  display: none;
+  position: absolute;
+  bottom: -420px;
+  left: -380px;
+  z-index: 0;
+  width: 1100px;
+  height: 1100px;
+  border-radius: 50%;
+  background-color: rgba(var(--brand-rgb), 0.05);
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .circle {
+    display: block;
+  }
+}
+
+/* "Más proyectos" va por encima de los círculos de fondo */
+.more {
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
   margin-bottom: clamp(40px, 6vw, 64px);
+  padding-top: clamp(56px, 8vw, 88px);
+  border-top: 1px solid var(--border);
 }
 
 .grid {
@@ -17,7 +49,7 @@
   flex-direction: column;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  background-color: var(--white);
+  background-color: var(--surface);
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -38,7 +70,7 @@
 }
 
 .cover[data-variant='1'] {
-  background-color: var(--ink);
+  background-color: var(--ink-bg);
 }
 
 .cover[data-variant='2'] {
@@ -84,15 +116,10 @@
 }
 
 .technologies {
-  margin-bottom: 24px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ink);
+  margin-bottom: 28px;
 }
 
+/* los botones quedan siempre abajo de la tarjeta, a la misma altura */
 .actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
   margin-top: auto;
 }

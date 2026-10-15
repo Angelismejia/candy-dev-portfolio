@@ -1,0 +1,60 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Sin demo todavía: pastilla tenue que no se puede tocar */
+.soon {
+  border-style: dashed;
+  border-color: var(--border);
+  color: var(--muted);
+  cursor: default;
+}
+
+.soon:hover {
+  transform: none;
+  box-shadow: none;
+  color: var(--muted);
+  background-color: transparent;
+}
+
+.github {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  color: var(--ink);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.github:hover {
+  transform: translateY(-2px) rotate(-8deg);
+  color: var(--page);
+  background-color: var(--ink);
+}
+
+.githubSmall {
+  width: 40px;
+  height: 40px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips li {
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--brand-dark);
+  background-color: var(--brand-soft);
+}
