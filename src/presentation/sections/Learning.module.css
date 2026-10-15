@@ -1,6 +1,7 @@
 .section {
   padding-block: clamp(56px, 8vw, 96px);
-  border-top: 1px solid var(--border);
+  /* mismo lavanda que la sección de proyectos */
+  background-color: var(--lavender);
 }
 
 .content {
@@ -25,5 +26,20 @@
   border: 2px solid var(--brand);
   border-radius: 999px;
   font-weight: 600;
+  color: var(--brand);
+}
+
+/* ---------- Calendario de GitHub ---------- */
+.github {
+  margin-top: clamp(48px, 7vw, 72px);
+}
+
+.githubTitle {
+  margin-bottom: 28px;
+  font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.8rem);
+  text-align: center;
+}
+
+.githubTitle span {
   color: var(--brand);
 }

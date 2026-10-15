@@ -1,5 +1,7 @@
 import type { Contact } from '../../domain/entities/Portfolio'
 import type { SocialLinks } from '../../domain/entities/Profile'
+import { ContactForm } from '../components/ContactForm'
+import { useLanguage } from '../i18n/language'
 import styles from './ContactSection.module.css'
 
 interface ContactSectionProps {
@@ -8,24 +10,24 @@ interface ContactSectionProps {
 }
 
 export function ContactSection({ contact, social }: ContactSectionProps) {
+  const { t } = useLanguage()
+
   return (
-    <section id="contacto" className={styles.section}>
+    <section id="contacto" className={`section-divider ${styles.section}`}>
       <div className="container">
-        <h2 className="section-title">Trabajemos juntos</h2>
-        <p className="section-intro">{contact.message}</p>
+        <h2 className="section-title" data-reveal>
+          {t.contact.title}
+        </h2>
+        <p className="section-intro" data-reveal>
+          {contact.message}
+        </p>
 
-        <p className={styles.label}>Me interesan oportunidades como:</p>
-        <p className={styles.roles}>{contact.desiredRoles.join(' · ')}</p>
-        <p className={styles.note}>{contact.extraNote}</p>
-
-        {/* Caja oscura que se monta sobre el footer, como en mattfarley.ca */}
-        <div className={styles.cta}>
-          <h3>¿Tienes una oportunidad o proyecto en mente?</h3>
-          <p>{social.email}</p>
-          <a className="btn btn-light" href={`mailto:${social.email}`}>
-            Hablemos
-          </a>
-        </div>
+        <ContactForm
+          email={social.email}
+          linkedin={social.linkedin}
+          github={social.github}
+          accessKey={contact.formAccessKey}
+        />
       </div>
     </section>
   )

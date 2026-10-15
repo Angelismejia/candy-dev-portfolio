@@ -1,0 +1,198 @@
+/* Recuadro oscuro que se monta sobre el footer (como el de mattfarley.ca) */
+.box {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -90px;
+  padding: clamp(32px, 5vw, 56px) clamp(22px, 5vw, 64px);
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  background-color: var(--ink-bg);
+  box-shadow: 0 20px 50px rgba(29, 20, 51, 0.3);
+  /* el navbar fijo no tapa el título al llegar con "Hablemos" */
+  scroll-margin-top: 110px;
+}
+
+.title {
+  margin-bottom: 28px;
+  font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem);
+  color: var(--white);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 48px);
+}
+
+/* ---------- Formulario ---------- */
+.form {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  border-radius: 10px;
+  /* 16px como mínimo: así el iPhone no hace zoom al escribir */
+  font: inherit;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.04);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--sun);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.submit {
+  justify-self: start;
+  margin-top: 6px;
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.error {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #ffd6dd;
+  background-color: rgba(255, 90, 120, 0.15);
+}
+
+.error a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Mensaje y correo, separados con una línea de color ---------- */
+.aside {
+  padding-left: clamp(24px, 3vw, 40px);
+  border-left: 3px solid var(--brand);
+}
+
+.asideText {
+  margin-bottom: 22px;
+  font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.15rem);
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.links {
+  display: grid;
+  gap: 14px;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  word-break: break-all;
+  color: var(--sun);
+  transition: gap 0.2s ease;
+}
+
+.links a:hover {
+  gap: 14px;
+  text-decoration: underline;
+}
+
+.links svg {
+  flex-shrink: 0;
+}
+
+/* ---------- Mensaje enviado ---------- */
+.done {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.doneIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--on-sun);
+  background-color: var(--sun);
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.doneTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.doneText {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes popIn {
+  from {
+    scale: 0.3;
+  }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 760px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  /* la línea de color pasa arriba del mensaje */
+  .aside {
+    padding: 24px 0 0;
+    border-top: 3px solid var(--brand);
+    border-left: 0;
+  }
+
+  .submit {
+    justify-self: stretch;
+  }
+}
