@@ -1,4 +1,5 @@
 import type { FeaturedProject as FeaturedProjectContent, Project } from '../../domain/entities/Project'
+import { GitHubIcon } from '../components/Icons'
 import { ProjectLinks, TechChips } from '../components/ProjectLinks'
 import { revealDelay } from '../hooks/useRevealOnScroll'
 import { FeaturedProject } from './FeaturedProject'
@@ -8,9 +9,10 @@ import styles from './Projects.module.css'
 interface ProjectsProps {
   featured: FeaturedProjectContent
   projects: Project[]
+  githubUrl: string
 }
 
-export function Projects({ featured, projects }: ProjectsProps) {
+export function Projects({ featured, projects, githubUrl }: ProjectsProps) {
   const { t } = useLanguage()
   return (
     <section id="proyectos" className={`section-divider ${styles.section}`} aria-label={t.projects.section}>
@@ -52,6 +54,14 @@ export function Projects({ featured, projects }: ProjectsProps) {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* el resto de proyectos está en GitHub: lleva directo a la pestaña de repositorios */}
+        <div className={styles.seeMore} data-reveal>
+          <a className="btn" href={`${githubUrl}?tab=repositories`} target="_blank" rel="noopener noreferrer">
+            <GitHubIcon size={20} />
+            {t.projects.seeMore}
+          </a>
         </div>
       </div>
     </section>

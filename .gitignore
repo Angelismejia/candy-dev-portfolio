@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Apuntes personales y capturas sueltas (no van al repo)
+apuntes/
+image.png
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

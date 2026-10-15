@@ -123,3 +123,10 @@
 .actions {
   margin-top: auto;
 }
+
+/* "Ver más en GitHub", centrado debajo de las tarjetas */
+.seeMore {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(40px, 6vw, 56px);
+}

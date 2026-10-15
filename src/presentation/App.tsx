@@ -30,7 +30,11 @@ export function App() {
         <About profile={portfolio.profile} />
         <TechStack skillGroups={portfolio.skillGroups} />
         <ExperienceSection experiences={portfolio.experiences} />
-        <Projects featured={portfolio.featuredProject} projects={portfolio.projects} />
+        <Projects
+          featured={portfolio.featuredProject}
+          projects={portfolio.projects}
+          githubUrl={portfolio.profile.social.github}
+        />
         <EducationSection education={portfolio.education} certifications={portfolio.certifications} />
         <Learning learning={portfolio.learning} githubUrl={portfolio.profile.social.github} />
         <ContactSection contact={portfolio.contact} social={portfolio.profile.social} />
