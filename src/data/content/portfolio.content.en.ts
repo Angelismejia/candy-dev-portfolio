@@ -95,11 +95,10 @@ export const portfolioContentEn: Portfolio = {
   projects: [
     {
       ...es.projects[0],
-      name: 'Psychology Consultation Management',
-      tagline: 'System for psychologists',
+      tagline: 'Full-stack retro burger joint',
       description: [
-        'An application for psychologists to register patients, schedule appointments, follow up on treatments and manage clinical records.',
-        'Built on a distributed layered architecture: Domain, Infrastructure, Application, Web and Api, with automated UI tests.',
+        'Website for a fictional burger joint where customers browse the menu, place an order and follow its status in real time.',
+        'Includes a kitchen panel with employee and admin roles to manage orders and products. Built with Clean Architecture on both frontend and backend, with automated tests and continuous integration.',
       ],
     },
     {

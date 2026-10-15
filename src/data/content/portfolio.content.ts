@@ -124,17 +124,16 @@ export const portfolioContent: Portfolio = {
   },
 
   projects: [
-    // Mientras tanto va este en lugar de BetterMe (que ahora es el proyecto destacado)
     {
-      id: 'psicologia',
-      name: 'Gestión de Consultas Psicológicas',
-      tagline: 'Sistema para psicólogos',
+      id: 'burger-cravvy',
+      name: 'Burger Cravvy',
+      tagline: 'Hamburguesería retro full-stack',
       description: [
-        'Aplicación para psicólogos que permite registrar pacientes, programar consultas, dar seguimiento a tratamientos y gestionar historiales clínicos.',
-        'Organizada en una arquitectura distribuida por capas: Domain, Infrastructure, Application, Web y Api, con pruebas automatizadas de la interfaz.',
+        'Web de una hamburguesería ficticia donde el cliente ve el menú, hace su pedido y sigue su estado en tiempo real.',
+        'Incluye un panel de cocina con roles de empleado y administrador para gestionar pedidos y productos. Construida con Clean Architecture en el frontend y el backend, con pruebas automatizadas e integración continua.',
       ],
-      technologies: ['C#', 'ASP.NET Core', 'Entity Framework Core', 'Web API', 'HTML', 'CSS', 'JavaScript', 'Selenium'],
-      repositoryUrl: 'https://github.com/Angelismejia/PsicologyProyect1665',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework Core', 'SignalR', 'JWT'],
+      repositoryUrl: 'https://github.com/Angelismejia/burger-cravvy-fullstack',
     },
     {
       id: 'kapicua',
