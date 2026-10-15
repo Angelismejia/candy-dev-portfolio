@@ -4,19 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Mejía | Junior Software Developer</title>
     <meta name="description"
-        content="Portafolio de Candy Angelis Mejía Soriano, Junior Software Developer egresada del ITLA. C#, .NET, Angular, React y TypeScript.">
+        content="Portafolio de Candy Angelis Mejía Soriano, Junior Software Developer egresada del ITLA. Proyectos full stack con .NET, C#, Angular, React y TypeScript.">
+    <meta name="author" content="Candy Angelis Mejía Soriano">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#b0179a">
+    <!-- ✏️ Si cambias de dominio, actualiza esta URL aquí, en og:url, en robots.txt y en sitemap.xml -->
+    <link rel="canonical" href="https://angelismejia.github.io/candy-dev-portfolio/">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <title>Candy Mejía | Software Developer</title>
+
+    <!-- Cómo se ve el link al compartirlo (LinkedIn, WhatsApp, Facebook, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Candy.dev">
+    <meta property="og:title" content="Candy Angelis Mejía Soriano | Junior Software Developer">
+    <meta property="og:description"
+        content="Desarrolladora de Software egresada del ITLA. Proyectos full stack con .NET, C#, Angular, React y TypeScript.">
+    <meta property="og:url" content="https://angelismejia.github.io/candy-dev-portfolio/">
+    <meta property="og:image" content="https://angelismejia.github.io/candy-dev-portfolio/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Candy Angelis Mejía Soriano, Junior Software Developer">
+    <meta property="og:locale" content="es_DO">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Candy Angelis Mejía Soriano | Junior Software Developer">
+    <meta name="twitter:description"
+        content="Desarrolladora de Software egresada del ITLA. Proyectos full stack con .NET, C#, Angular, React y TypeScript.">
+    <meta name="twitter:image" content="https://angelismejia.github.io/candy-dev-portfolio/og-image.png">
+
+    <!-- Datos estructurados: le dicen a Google que es el portafolio de una persona -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Candy Angelis Mejía Soriano",
+        "jobTitle": "Junior Software Developer",
+        "url": "https://angelismejia.github.io/candy-dev-portfolio/",
+        "image": "https://angelismejia.github.io/candy-dev-portfolio/og-image.png",
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Instituto Tecnológico de Las Américas (ITLA)" },
+        "knowsAbout": [".NET", "C#", "ASP.NET Core", "Angular", "React", "TypeScript", "SQL Server"],
+        "sameAs": [
+            "https://github.com/Angelismejia",
+            "https://www.linkedin.com/in/candy-angelis-mej%C3%ADa/",
+            "https://www.instagram.com/mejia_angelis/"
+        ]
+    }
+    </script>
+
+    <script>
+        // Aplica el tema y el idioma guardados antes de pintar, para que no parpadee
+        try {
+            var tema = localStorage.getItem('tema');
+            if (tema === 'oscuro' || tema === 'lavanda' || tema === 'rosa') document.documentElement.setAttribute('data-theme', tema);
+            if (localStorage.getItem('idioma') === 'en') document.documentElement.lang = 'en';
+        } catch (e) {}
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- media="print" = no bloquea el primer pintado; main.tsx la activa en cuanto carga -->
+    <link id="fuentes" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" media="print">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
 </head>
 
 <body>
+    <noscript>
+        <p style="padding: 24px; font-family: sans-serif; text-align: center;">
+            Este portafolio necesita JavaScript. Puedes ver mis proyectos en
+            <a href="https://github.com/Angelismejia">github.com/Angelismejia</a>.
+        </p>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 </body>
