@@ -4,6 +4,48 @@
   background-color: var(--hero-bg);
   /* línea morada que divide la sección */
   border-bottom: 4px solid var(--brand);
+  /* la foto entra desde abajo sin tapar la línea morada */
+  overflow: hidden;
+}
+
+/* ---------- Entrada al cargar la página ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.content > * {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.content > :nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.content > :nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.content > :nth-child(4) {
+  animation-delay: 0.28s;
+}
+
+.content > :nth-child(5) {
+  animation-delay: 0.36s;
+}
+
+.content > :nth-child(6) {
+  animation-delay: 0.44s;
+}
+
+.visual {
+  animation: fadeUp 0.9s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .grid {
@@ -79,7 +121,8 @@
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    /* aire entre los botones y la foto */
+    gap: 64px;
   }
 
   .content {
@@ -109,6 +152,6 @@
   }
 
   .visual {
-    max-width: 240px;
+    max-width: 280px;
   }
 }

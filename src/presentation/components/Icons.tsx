@@ -79,6 +79,47 @@ export const MailIcon = (props: IconProps) => (
   </Svg>
 )
 
+// Estilo del logo de WhatsApp: burbuja con colita abajo a la izquierda y teléfono relleno
+export const WhatsAppIcon = ({ size = 24 }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      d="M4.95 16.25A8.5 8.5 0 1 1 8.68 19.32L3.4 20.8z"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinejoin="round"
+    />
+    <path
+      transform="translate(7.3 6.7) scale(0.41)"
+      fill="currentColor"
+      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+    />
+  </svg>
+)
+
+export const PaletteIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.8 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z" />
+    <circle cx="7.5" cy="11" r="1" />
+    <circle cx="10.5" cy="7.5" r="1" />
+    <circle cx="15" cy="7.5" r="1" />
+  </Svg>
+)
+
+export const GlobeIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+  </Svg>
+)
+
+export const ExternalLinkIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M14 4h6v6M20 4l-9 9" />
+    <path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />
+  </Svg>
+)
+
 export const DownloadIcon = (props: IconProps) => (
   <Svg {...props}>
     <path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" />

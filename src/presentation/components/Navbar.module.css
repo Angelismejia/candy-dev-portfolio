@@ -9,7 +9,7 @@
 }
 
 .scrolled {
-  background-color: var(--white);
+  background-color: var(--surface);
   box-shadow: 0 1px 0 var(--border), 0 8px 24px rgba(40, 20, 70, 0.06);
 }
 
@@ -20,8 +20,16 @@
   height: 100%;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .nav {
   display: flex;
+  margin-left: auto;
+  margin-right: 16px;
   align-items: center;
   gap: 20px;
 }
@@ -112,7 +120,7 @@
     align-items: stretch;
     gap: 28px;
     padding: 16px var(--gutter) 40px;
-    background-color: var(--white);
+    background-color: var(--surface);
     border-top: 1px solid var(--border);
     opacity: 0;
     visibility: hidden;

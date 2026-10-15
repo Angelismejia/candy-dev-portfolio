@@ -1,19 +1,34 @@
 /* =========================================
    Tokens de diseño — colores de Candy
+   Tema "claro" (por defecto). Los otros temas solo cambian estos valores.
    ========================================= */
 :root {
   --brand: #b0179a;
+  --brand-rgb: 176, 23, 154;
   --brand-dark: #8a1279;
   --brand-soft: #fbe8f7;
   --lavender: #f4ecfb;
   --hero-bg: #f8edfd;
   --sun: #ffe08a;
+  /* texto/íconos encima del amarillo: siempre oscuro */
+  --on-sun: #1d1433;
   --ink: #1d1433;
   --ink-soft: #2b2145;
+  /* fondo oscuro fijo (caja de contacto, botón "Ver demo"), oscuro en todos los temas */
+  --ink-bg: #1d1433;
   --text: #2a2140;
   --muted: #5d5373;
   --border: #e9e1f0;
+  /* blanco de verdad: texto sobre el color de marca */
   --white: #ffffff;
+  /* fondo de la página y de tarjetas/paneles */
+  --page: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #fdfbfe;
+  --logo-ink: #17152f;
+  --logo-accent: #d414d8;
+  /* franjas grandes de color (Sobre mí, footer) */
+  --band: var(--brand);
 
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-display: 'Chakra Petch', 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -27,6 +42,57 @@
   --shadow: 0 6px 24px rgba(40, 20, 70, 0.08);
 
   color-scheme: light;
+}
+
+/* Tema oscuro: fondos morado noche, mismos tonos rosados un poco más claros para que se lean */
+:root[data-theme='oscuro'] {
+  --brand: #e04cc8;
+  --brand-rgb: 224, 76, 200;
+  --brand-dark: #c23aab;
+  --brand-soft: #3a1f3f;
+  --lavender: #19122a;
+  --hero-bg: #1b132d;
+  --ink: #f4eefc;
+  --ink-soft: #e2d8f2;
+  --ink-bg: #2a1f42;
+  --text: #ddd4ec;
+  --muted: #a99dbf;
+  --border: #30264a;
+  --page: #120d1f;
+  --surface: #1e1631;
+  --surface-soft: #241b3a;
+  --logo-ink: #f4eefc;
+  --logo-accent: #f06ce0;
+  --band: #8e1f80;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+
+  color-scheme: dark;
+}
+
+/* Tema rosa: rosado intenso con fondos rosa pastel */
+:root[data-theme='rosa'] {
+  --brand: #d6337a;
+  --brand-rgb: 214, 51, 122;
+  --brand-dark: #b0225f;
+  --brand-soft: #ffe3ef;
+  --lavender: #fff0f6;
+  --hero-bg: #ffeaf3;
+  --border: #f6d9e6;
+  --logo-accent: #e0408a;
+  /* franjas un poco más oscuras para que el texto blanco se lea bien */
+  --band: #b4255f;
+}
+
+/* Tema lavanda: el morado vibrante del logo */
+:root[data-theme='lavanda'] {
+  --brand: #7a14f0;
+  --brand-rgb: 122, 20, 240;
+  --brand-dark: #5f0bc4;
+  --brand-soft: #efe4ff;
+  --lavender: #f3edff;
+  --hero-bg: #efe6ff;
+  --border: #e4dbf5;
+  --logo-accent: #8317ff;
 }
 
 /* =========================================
@@ -50,7 +116,7 @@ body {
   font-size: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
   line-height: 1.8;
   color: var(--text);
-  background-color: var(--white);
+  background-color: var(--page);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -90,6 +156,25 @@ img {
   height: auto;
 }
 
+/* Enlace "Saltar al contenido": invisible hasta que se llega con Tab */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--brand);
+  translate: 0 -200%;
+  transition: translate 0.2s ease;
+}
+
+.skip-link:focus {
+  translate: none;
+}
+
 :focus-visible {
   outline: 3px solid var(--brand);
   outline-offset: 3px;
@@ -113,6 +198,11 @@ img {
 
 .section {
   padding-block: var(--section-space);
+}
+
+/* Línea morada que divide las secciones (la misma que está debajo del hero) */
+.section-divider {
+  border-top: 4px solid var(--brand);
 }
 
 .section-title {
@@ -147,10 +237,13 @@ img {
   color: var(--brand);
   background-color: transparent;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(var(--brand-rgb), 0.22);
   color: var(--white);
   background-color: var(--brand);
 }
@@ -181,9 +274,50 @@ img {
   font-size: 0.9rem;
 }
 
+/* =========================================
+   Animaciones al hacer scroll (useRevealOnScroll)
+   ========================================= */
+/* Se usan translate/scale (no transform) para no pisar los efectos hover de las tarjetas */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  translate: 0 28px;
+  transition:
+    opacity 0.7s ease,
+    translate 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    scale 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  transition-delay: var(--reveal-delay, 0s), var(--reveal-delay, 0s), var(--reveal-delay, 0s), 0s, 0s;
+}
+
+/* Crece un poquito desde abajo, sin despegarse de lo que tiene debajo */
+.reveal-ready [data-reveal='zoom'] {
+  translate: none;
+  scale: 0.92;
+  transform-origin: bottom center;
+}
+
+/* Grupo: el contenedor no se mueve, sus partes animan con su propio CSS al recibir .is-visible */
+.reveal-ready [data-reveal='group'] {
+  opacity: 1;
+  translate: none;
+}
+
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  translate: none;
+  scale: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .reveal-ready [data-reveal] {
+    opacity: 1;
+    translate: none;
+    scale: none;
   }
 
   *,

@@ -6,12 +6,23 @@
   display: flex;
   justify-content: center;
   /* espacio arriba; abajo nada: la imagen queda pegada a la franja */
-  padding-top: clamp(48px, 7vw, 80px);
+  padding: clamp(72px, 10vw, 128px) var(--gutter) 0;
 }
 
 .illustration img {
   width: 100%;
-  max-width: clamp(240px, 30vw, 360px);
+  max-width: clamp(260px, 32vw, 400px);
+}
+
+/* en el cel: más espacio para que la ilustración no quede pegada a la foto */
+@media (max-width: 600px) {
+  .illustration {
+    padding-top: 104px;
+  }
+
+  .illustration img {
+    max-width: 280px;
+  }
 }
 
 /* Franja de color de marca (como la morada de Matt Farley) */
@@ -20,7 +31,7 @@
   /* espacio extra abajo: la tarjeta de tecnologías se monta encima */
   padding-bottom: clamp(140px, 16vw, 200px);
   color: var(--white);
-  background-color: var(--brand);
+  background-color: var(--band);
 }
 
 .content {

@@ -2,7 +2,7 @@
   /* espacio arriba para la caja oscura de contacto que se monta encima */
   padding: 160px 0 48px;
   color: var(--white);
-  background-color: var(--brand);
+  background-color: var(--band);
 }
 
 .inner {
@@ -43,7 +43,26 @@
   background-color: var(--white);
 }
 
+.credits {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  max-width: 560px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.madeBy {
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.builtWith {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .copy {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
 }
