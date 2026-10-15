@@ -1,7 +1,7 @@
 import type { Portfolio } from '../../domain/entities/Portfolio'
 
-// ✏️ Aquí está TODO el texto del portafolio.
-// Para cambiar algo (un proyecto, un link, una tecnología) solo se edita este archivo.
+// ✏️ Aquí está TODO el texto del portafolio en español.
+// La versión en inglés está en portfolio.content.en.ts: si cambias algo aquí, cámbialo también allá.
 export const portfolioContent: Portfolio = {
   profile: {
     name: 'Candy Angelis Mejía Soriano',
@@ -18,53 +18,54 @@ export const portfolioContent: Portfolio = {
       'Disfruto trabajar en equipo, aprender de otras personas, conocer nuevas tecnologías y fortalecer mis conocimientos mediante la práctica constante.',
       'Mi objetivo es seguir creciendo como desarrolladora y participar en proyectos donde pueda aprender, aportar y enfrentar nuevos retos.',
     ],
-    highlightedSkills: ['C#', '.NET', 'Angular', 'React', 'TypeScript'],
+    highlightedSkills: ['.NET', 'C#', 'Angular', 'React', 'TypeScript'],
     stats: [
       { value: '8', label: 'meses de experiencia' },
       { value: '2', label: 'empresas' },
       { value: '3', label: 'proyectos destacados' },
     ],
-    photoPath: 'images/portada.png',
-    illustrationPath: 'images/escritorio.png',
+    photoPath: 'images/portada-sin-fondo.webp',
+    illustrationPath: 'images/escritorio-sin-fondo.webp',
     cvPath: 'cv-candy-mejia.pdf',
     social: {
       github: 'https://github.com/Angelismejia',
-      linkedin: 'https://www.linkedin.com/in/candyangelismejia/',
+      linkedin: 'https://www.linkedin.com/in/candy-angelis-mej%C3%ADa/',
       instagram: 'https://www.instagram.com/mejia_angelis/',
       email: 'angelismejia06@gmail.com',
+      // código de país (1, República Dominicana) + número, solo dígitos
+      whatsapp: '18099777238',
     },
   },
 
   experiences: [
     {
       id: 'banreservas',
-      company: 'Banreservas',
-      position: 'Pasante de Desarrollo de Software',
-      description:
-        'Participé en el desarrollo y mantenimiento de aplicaciones internas, trabajando tanto en frontend como en backend.',
+      company: 'CTB Banreservas',
+      companyUrl: 'https://www.banreservas.com/',
+      position: 'Desarrolladora de Software · Prácticas',
+      period: 'Abr. 2026 – Jul. 2026 · 4 meses',
+      location: 'Santo Domingo · Presencial',
+      description: 'Mantenimiento y mejora de aplicaciones internas en la Gerencia de Desarrollo Apoyo Core.',
       achievements: [
-        'Desarrollo con React y TypeScript.',
-        'Desarrollo de funcionalidades con C# y .NET.',
-        'Procesos de carga masiva mediante archivos Excel.',
-        'Uso de Docker y Keycloak.',
-        'Trabajo colaborativo dentro de un equipo de desarrollo.',
+        'Interfaces en React y TypeScript: formularios, dashboards y validaciones.',
+        'Carga masiva de archivos Excel con validación de datos y manejo de errores.',
+        'Integración de servicios en C#/.NET y mejoras en filtros, exportaciones y fechas.',
       ],
       technologies: ['React', 'TypeScript', 'C#', '.NET', 'Docker', 'Keycloak'],
     },
     {
       id: 'tectrics',
       company: 'TECTRICS SRL',
-      position: 'Pasante de Desarrollo de Software',
-      description:
-        'Participé en proyectos de desarrollo backend trabajando con bases de datos, APIs y arquitectura de software.',
+      position: 'Desarrolladora de Software · Prácticas',
+      period: 'Ene. 2026 – Abr. 2026 · 4 meses',
+      location: 'Santo Domingo · Remoto',
+      description: 'Desarrollo frontend en un equipo ágil que trabajaba con Scrum.',
       achievements: [
-        'Desarrollo con C# y .NET.',
-        'Desarrollo y trabajo con APIs.',
-        'SQL Server y MongoDB.',
-        'Clean Architecture.',
-        'Git y trabajo bajo metodología Scrum.',
+        'Mejora de interfaces de usuario e integración con servicios backend.',
+        'Funcionalidades con C#, SQL Server y MongoDB bajo Clean Architecture.',
+        'Trabajo en equipo con control de versiones (Git) y buenas prácticas de desarrollo.',
       ],
-      technologies: ['C#', '.NET', 'SQL Server', 'MongoDB', 'Git', 'Scrum'],
+      technologies: ['C#', 'SQL Server', 'MongoDB', 'Clean Architecture', 'Git', 'Scrum'],
     },
   ],
 
@@ -84,38 +85,56 @@ export const portfolioContent: Portfolio = {
     {
       id: 'databases',
       title: 'Bases de datos',
-      description: 'Diseño y consulto datos relacionales y NoSQL.',
+      description: 'Conocimientos básicos en bases de datos relacionales y NoSQL.',
       skills: ['SQL Server', 'MongoDB', 'Firebase / Firestore'],
     },
     {
       id: 'tools',
       title: 'Herramientas',
       description: 'Lo que uso día a día para construir, colaborar y desplegar.',
-      skills: ['Git', 'GitHub', 'Docker', 'Keycloak', 'Azure', 'Figma', 'Canva'],
+      skills: ['Git', 'GitHub', 'Docker', 'Azure', 'Canva'],
     },
   ],
 
+  featuredProject: {
+    id: 'betterme',
+    name: 'BetterMe',
+    tagline: 'Tu compañero para crecer un poquito cada día',
+    description: [
+      'BetterMe es una aplicación full-stack para organizar objetivos, tareas y hábitos, y ver tu progreso con el tiempo. Además tiene un lado social: perfiles, seguidores y chat en tiempo real para motivarse entre amigos.',
+    ],
+    highlights: [
+      'Objetivos, tareas y hábitos con seguimiento de progreso',
+      'Diario personal para registrar cómo te va',
+      'Insignias y rachas que mantienen la motivación',
+      'Perfiles, seguidores y chat en tiempo real con SignalR',
+      'Inicio de sesión seguro con JWT',
+    ],
+    note: {
+      title: 'Full-stack con Clean Architecture',
+      text: 'Angular en el frontend y ASP.NET Core + SQL Server en el backend.',
+    },
+    motivation:
+      'BetterMe nació de una necesidad personal: organizar mi día y mantener mis metas siempre visibles. Comprobé que cuando mis objetivos y tareas están escritos y a la vista, mi compromiso con cumplirlos aumenta. Quise llevar esa experiencia más allá de lo individual e incorporé funciones sociales para compartir el progreso con amigos y motivarnos mutuamente, convirtiendo la productividad en una experiencia más cercana y constante.',
+    technologies: ['Angular', 'ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework Core', 'SignalR', 'JWT'],
+    // ✏️ Pon aquí las capturas, ej: 'images/betterme/betterme-1.png' (9 ideal, verticales tipo celular)
+    screenshots: [],
+    demoUrl: 'https://better-me-d6gugua2dnhucpfg.centralus-01.azurewebsites.net/',
+    repositoryUrl: 'https://github.com/Angelismejia/SeguimientoDeObjetivos',
+  },
+
   projects: [
+    // Mientras tanto va este en lugar de BetterMe (que ahora es el proyecto destacado)
     {
-      id: 'betterme',
-      name: 'BetterMe',
-      tagline: 'Seguimiento de objetivos',
+      id: 'psicologia',
+      name: 'Gestión de Consultas Psicológicas',
+      tagline: 'Sistema para psicólogos',
       description: [
-        'Aplicación full-stack para organizar objetivos, tareas y hábitos, permitiendo a los usuarios registrar y visualizar su progreso.',
-        'Incluye perfiles, diario personal, insignias, rachas, seguidores y chat en tiempo real.',
+        'Aplicación para psicólogos que permite registrar pacientes, programar consultas, dar seguimiento a tratamientos y gestionar historiales clínicos.',
+        'Organizada en una arquitectura distribuida por capas: Domain, Infrastructure, Application, Web y Api, con pruebas automatizadas de la interfaz.',
       ],
-      technologies: [
-        'Angular',
-        'ASP.NET Core',
-        'C#',
-        'SQL Server',
-        'Entity Framework Core',
-        'SignalR',
-        'JWT',
-        'Clean Architecture',
-      ],
-      // demoUrl: 'https://...',  ← pon aquí el link cuando la app esté publicada
-      repositoryUrl: 'https://github.com/Angelismejia/BetterMe',
+      technologies: ['C#', 'ASP.NET Core', 'Entity Framework Core', 'Web API', 'HTML', 'CSS', 'JavaScript', 'Selenium'],
+      repositoryUrl: 'https://github.com/Angelismejia/PsicologyProyect1665',
     },
     {
       id: 'kapicua',
@@ -126,7 +145,8 @@ export const portfolioContent: Portfolio = {
         'Permite registrar partidas y rondas, consultar historiales, visualizar estadísticas, seleccionar campeones y sincronizar información entre dispositivos.',
       ],
       technologies: ['Flutter', 'Dart', 'Firebase Authentication', 'Firestore', 'Provider', 'Clean Architecture'],
-      repositoryUrl: 'https://github.com/Angelismejia/Kapicua',
+      demoUrl: 'https://kapicua.web.app/',
+      repositoryUrl: 'https://github.com/Angelismejia/kapicua',
     },
     {
       id: 'prediccion-texto',
@@ -147,7 +167,7 @@ export const portfolioContent: Portfolio = {
         'CSS',
         'JavaScript',
       ],
-      repositoryUrl: 'https://github.com/Angelismejia/Sistema-de-Prediccion-de-Texto-Especulativo',
+      repositoryUrl: 'https://github.com/Angelismejia/buscador-paralelo-especulativo',
     },
   ],
 
@@ -156,36 +176,42 @@ export const portfolioContent: Portfolio = {
       id: 'itla',
       degree: 'Técnico Superior en Desarrollo de Software',
       institution: 'Instituto Tecnológico de Las Américas — ITLA',
+      institutionUrl: 'https://educapermanente.itla.edu.do/',
       description:
         'Formación en desarrollo frontend y backend, programación orientada a objetos, bases de datos, APIs, arquitectura de software y desarrollo de aplicaciones.',
       period: '2023 – 2026',
     },
   ],
 
+  // 📄 Los PDF van en public/certificados/ con estos nombres (angular.pdf, indotel.pdf, scrum.pdf, cisco.pdf)
   certifications: [
     {
       id: 'angular',
-      name: 'Desarrollo Web con Angular',
-      description: 'Desarrollo de aplicaciones web utilizando Angular y TypeScript.',
+      name: 'Desarrollo Web Front-End con Angular — ITLA',
+      description: 'Curso de 40 horas: desarrollo de aplicaciones web con Angular y TypeScript.',
       year: '2026',
+      certificatePath: 'certificados/angular.pdf',
     },
     {
       id: 'indotel',
-      name: 'Desarrollo Full Stack — INDOTEL',
-      description: 'Tecnologías y conceptos de desarrollo frontend y backend.',
+      name: 'Desarrollo Web Full Stack (Intermedio) — INDOTEL',
+      description: 'Programa Talento Digital de INDOTEL y el BID, 80 horas: desarrollo frontend y backend.',
       year: '2026',
+      certificatePath: 'certificados/indotel.pdf',
     },
     {
       id: 'scrum',
-      name: 'Scrum Fundamentals Certified',
+      name: 'Fundamentos de Scrum — soylíder.net',
       description: 'Fundamentos de Scrum, metodologías ágiles y trabajo colaborativo.',
-      year: '2023',
+      year: '2025',
+      certificatePath: 'certificados/scrum.pdf',
     },
     {
       id: 'cisco',
-      name: 'PC Hardware — Cisco',
-      description: 'Fundamentos de hardware, componentes de computadoras y soporte técnico.',
+      name: 'IT Essentials: PC Hardware and Software — Cisco',
+      description: 'Cisco Networking Academy: hardware, software, componentes de computadoras y soporte técnico.',
       year: '2023',
+      certificatePath: 'certificados/cisco.pdf',
     },
   ],
 
@@ -198,14 +224,8 @@ export const portfolioContent: Portfolio = {
 
   contact: {
     message:
-      'Estoy abierta a nuevas oportunidades donde pueda seguir creciendo profesionalmente, aportar mis conocimientos y adquirir nuevas experiencias.',
-    desiredRoles: [
-      'Junior Software Developer',
-      '.NET Developer',
-      'Backend Developer',
-      'Frontend Developer',
-      'Full Stack Developer',
-    ],
-    extraNote: 'También estoy abierta a posiciones relacionadas con QA técnico.',
+      'Me interesa formar parte de proyectos donde pueda aportar mis conocimientos, asumir nuevos retos y seguir creciendo profesionalmente.',
+    // TODO: pegar la access key de https://web3forms.com (se pide gratis con el Gmail donde quieres recibir los mensajes)
+    formAccessKey: '',
   },
 }
