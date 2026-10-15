@@ -1,11 +1,14 @@
 import { GetPortfolio } from '../../application/use-cases/GetPortfolio'
 import { StaticPortfolioRepository } from '../../data/repositories/StaticPortfolioRepository'
+import { useLanguage } from '../i18n/language'
 
 // Composición: aquí se conecta la implementación concreta con el caso de uso.
 const getPortfolio = new GetPortfolio(new StaticPortfolioRepository())
 
+// Contenido del portafolio en el idioma elegido
 export function usePortfolio() {
-  return getPortfolio.execute()
+  const { language } = useLanguage()
+  return getPortfolio.execute(language)
 }
 
 // Arma rutas a archivos de /public respetando la base de GitHub Pages

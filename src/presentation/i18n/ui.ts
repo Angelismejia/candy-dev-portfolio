@@ -1,0 +1,223 @@
+// Textos fijos de la interfaz (botones, títulos, formulario) en cada idioma.
+// El contenido del portafolio (experiencia, proyectos…) está en data/content.
+const es = {
+  meta: {
+    title: 'Candy Mejía | Junior Software Developer',
+    description:
+      'Portafolio de Candy Angelis Mejía Soriano, Junior Software Developer egresada del ITLA. Proyectos full stack con .NET, C#, Angular, React y TypeScript.',
+    skip: 'Saltar al contenido',
+  },
+  nav: {
+    about: 'Sobre mí',
+    experience: 'Experiencia',
+    projects: 'Proyectos',
+    education: 'Educación',
+    cta: 'Hablemos',
+    home: 'Candy.dev, ir al inicio',
+    menu: 'Menú principal',
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
+  },
+  prefs: {
+    theme: 'Cambiar colores',
+    themes: { claro: 'Claro', oscuro: 'Oscuro', lavanda: 'Lavanda', rosa: 'Rosa' },
+    language: 'Ver en inglés',
+  },
+  hero: {
+    hello: 'Hola, soy',
+    viewProjects: 'Ver proyectos',
+    downloadCv: 'Descargar CV',
+    photoAlt: (name: string) => `Caricatura de ${name} con su laptop`,
+  },
+  about: {
+    hello: 'Hola, soy',
+    niceToMeet: 'Mucho gusto.',
+  },
+  tech: {
+    using: 'Lo que uso:',
+  },
+  experience: {
+    title: 'Mi experiencia',
+    highlights: 'Lo que hice:',
+    technologies: 'Tecnologías:',
+  },
+  projects: {
+    section: 'Proyectos',
+    featured: 'Proyecto destacado',
+    canDo: 'Lo que puedes hacer',
+    why: '¿Por qué lo hice?',
+    more: 'Más proyectos',
+    demo: 'Ver demo',
+    demoSoon: 'Demo pronto',
+    code: 'Ver código',
+    codeOnGithub: 'Ver código en GitHub',
+    codeOf: (name: string) => `Ver el código de ${name} en GitHub`,
+    screenshots: (name: string) => `Capturas de ${name}`,
+    screenshot: 'Captura',
+    technologies: 'Tecnologías',
+  },
+  education: {
+    title: 'Educación',
+    certifications: 'Certificaciones y cursos',
+    viewCertificate: 'Ver certificado',
+  },
+  learning: {
+    title: 'Siempre aprendiendo',
+  },
+  contact: {
+    title: 'Trabajemos juntos',
+  },
+  github: {
+    titleBefore: 'Mi calendario de',
+    titleAfter: '',
+    total: (count: number) => `${count.toLocaleString('es')} contribuciones en el último año`,
+    day: (count: number, date: string) => `${count} ${count === 1 ? 'contribución' : 'contribuciones'} el ${date}`,
+    loading: 'Cargando contribuciones…',
+    less: 'Menos',
+    more: 'Más',
+    fallback: 'Ver mi actividad en GitHub',
+  },
+  form: {
+    title: '¡Hablemos! ♡',
+    intro: '¿Tienes una oportunidad, un proyecto en mente o simplemente quieres saludar? ¡No dudes en escribirme!',
+    name: 'Nombre',
+    namePlaceholder: 'Tu nombre',
+    email: 'Email',
+    emailPlaceholder: 'tu@correo.com',
+    message: 'Mensaje',
+    messagePlaceholder: 'Escribe tu mensaje aquí',
+    send: 'Enviar mensaje',
+    sending: 'Enviando…',
+    error: 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme a',
+    invalid: 'Revisa tus datos: escribe tu nombre, un correo válido y un mensaje de al menos 10 caracteres.',
+    wait: 'Ya recibí tu mensaje. Espera un minuto antes de enviar otro.',
+    sentTitle: '¡Mensaje enviado!',
+    sentText: 'Gracias por escribirme. Te responderé pronto a tu correo.',
+    another: 'Enviar otro mensaje',
+    subject: (name: string) => `Portafolio: mensaje de ${name}`,
+  },
+  whatsapp: {
+    label: 'Escríbeme por WhatsApp',
+    tooltip: '¡Escríbeme!',
+    greeting: '¡Hola Candy! Vi tu portafolio y me gustaría hablar contigo.',
+  },
+  footer: {
+    madeBy: 'Diseñado y desarrollado por',
+    builtWith: 'Hecho con',
+    rights: 'Todos los derechos reservados.',
+    email: 'Enviar email',
+  },
+}
+
+export type UiText = typeof es
+
+const en: UiText = {
+  meta: {
+    title: 'Candy Mejía | Junior Software Developer',
+    description:
+      'Portfolio of Candy Angelis Mejía Soriano, Junior Software Developer graduated from ITLA. Full stack projects with .NET, C#, Angular, React and TypeScript.',
+    skip: 'Skip to content',
+  },
+  nav: {
+    about: 'About',
+    experience: 'Experience',
+    projects: 'Projects',
+    education: 'Education',
+    cta: "Let's talk",
+    home: 'Candy.dev, go to top',
+    menu: 'Main menu',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+  },
+  prefs: {
+    theme: 'Change colors',
+    themes: { claro: 'Light', oscuro: 'Dark', lavanda: 'Lavender', rosa: 'Pink' },
+    language: 'Ver en español',
+  },
+  hero: {
+    hello: "Hi, I'm",
+    viewProjects: 'View projects',
+    downloadCv: 'Download CV',
+    photoAlt: (name: string) => `Illustration of ${name} with her laptop`,
+  },
+  about: {
+    hello: "Hi, I'm",
+    niceToMeet: 'Nice to meet you.',
+  },
+  tech: {
+    using: 'What I use:',
+  },
+  experience: {
+    title: 'My experience',
+    highlights: 'What I did:',
+    technologies: 'Technologies:',
+  },
+  projects: {
+    section: 'Projects',
+    featured: 'Featured project',
+    canDo: 'What you can do',
+    why: 'Why I built it',
+    more: 'More projects',
+    demo: 'View demo',
+    demoSoon: 'Demo soon',
+    code: 'View code',
+    codeOnGithub: 'View code on GitHub',
+    codeOf: (name: string) => `View ${name} code on GitHub`,
+    screenshots: (name: string) => `${name} screenshots`,
+    screenshot: 'Screenshot',
+    technologies: 'Technologies',
+  },
+  education: {
+    title: 'Education',
+    certifications: 'Certifications & courses',
+    viewCertificate: 'View certificate',
+  },
+  learning: {
+    title: 'Always learning',
+  },
+  contact: {
+    title: "Let's work together",
+  },
+  github: {
+    titleBefore: 'My',
+    titleAfter: 'calendar',
+    total: (count: number) => `${count.toLocaleString('en')} contributions in the last year`,
+    day: (count: number, date: string) => `${count} ${count === 1 ? 'contribution' : 'contributions'} on ${date}`,
+    loading: 'Loading contributions…',
+    less: 'Less',
+    more: 'More',
+    fallback: 'See my activity on GitHub',
+  },
+  form: {
+    title: "Let's talk! ♡",
+    intro: "Have an opportunity, a project in mind, or just want to say hi? Don't hesitate to reach out!",
+    name: 'Name',
+    namePlaceholder: 'Your name',
+    email: 'Email',
+    emailPlaceholder: 'you@email.com',
+    message: 'Message',
+    messagePlaceholder: 'Your message here',
+    send: 'Send message',
+    sending: 'Sending…',
+    error: "The message couldn't be sent. Please try again or email me at",
+    invalid: 'Please check your details: your name, a valid email and a message of at least 10 characters.',
+    wait: 'I already got your message. Please wait a minute before sending another one.',
+    sentTitle: 'Message sent!',
+    sentText: "Thanks for reaching out. I'll reply to your email soon.",
+    another: 'Send another message',
+    subject: (name: string) => `Portfolio: message from ${name}`,
+  },
+  whatsapp: {
+    label: 'Message me on WhatsApp',
+    tooltip: 'Message me!',
+    greeting: "Hi Candy! I saw your portfolio and I'd like to talk with you.",
+  },
+  footer: {
+    madeBy: 'Designed and developed by',
+    builtWith: 'Built with',
+    rights: 'All rights reserved.',
+    email: 'Send email',
+  },
+}
+
+export const ui = { es, en }

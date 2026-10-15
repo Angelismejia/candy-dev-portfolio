@@ -1,4 +1,4 @@
-import type { Portfolio } from '../../domain/entities/Portfolio'
+import type { Language, Portfolio } from '../../domain/entities/Portfolio'
 import type { PortfolioRepository } from '../../domain/repositories/PortfolioRepository'
 
 // Caso de uso: "obtener el portafolio".
@@ -10,7 +10,7 @@ export class GetPortfolio {
     this.repository = repository
   }
 
-  execute(): Portfolio {
-    return this.repository.getPortfolio()
+  execute(language: Language): Portfolio {
+    return this.repository.getPortfolio(language)
   }
 }
