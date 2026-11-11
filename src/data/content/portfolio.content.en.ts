@@ -72,6 +72,29 @@ export const portfolioContentEn: Portfolio = {
     },
   ],
 
+  services: [
+    {
+      ...es.services[0],
+      title: 'Websites',
+      description: 'Modern sites that adapt to phones and computers, for businesses, startups and professionals.',
+    },
+    {
+      ...es.services[1],
+      title: 'Digital catalogs',
+      description: 'Online menus and catalogs to show products and prices and make it easy for customers to reach you.',
+    },
+    {
+      ...es.services[2],
+      title: 'Web applications',
+      description: 'Custom systems to organize information, manage processes and automate tasks.',
+    },
+    {
+      ...es.services[3],
+      title: 'Backend & APIs',
+      description: 'Building and integrating APIs, databases and features for web applications.',
+    },
+  ],
+
   featuredProject: {
     ...es.featuredProject,
     tagline: 'Your companion to grow a little every day',
@@ -112,6 +135,17 @@ export const portfolioContentEn: Portfolio = {
     },
     {
       ...es.projects[2],
+      tagline: 'Orders for an artisan bakery',
+      description: [
+        'An ordering app for a bakery: a catalog of 62 desserts with search and filters, cart, discount coupons, favorites and order history.',
+        'Orders are sent ready-made through WhatsApp. It works offline thanks to Hive and adapts to phone, tablet and desktop.',
+      ],
+    },
+  ],
+
+  extraProjects: [
+    {
+      ...es.extraProjects[0],
       name: 'Speculative Text Prediction System',
       tagline: 'Team project · Team lead',
       description: [

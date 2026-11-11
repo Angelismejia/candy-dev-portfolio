@@ -95,6 +95,29 @@ export const portfolioContent: Portfolio = {
     },
   ],
 
+  services: [
+    {
+      id: 'web',
+      title: 'Páginas web',
+      description: 'Sitios modernos, adaptables a celulares y computadoras, para negocios, emprendimientos y profesionales.',
+    },
+    {
+      id: 'catalog',
+      title: 'Catálogos digitales',
+      description: 'Menús y catálogos online para mostrar productos, precios y facilitar el contacto con clientes.',
+    },
+    {
+      id: 'apps',
+      title: 'Aplicaciones web',
+      description: 'Sistemas personalizados para organizar información, gestionar procesos y automatizar tareas.',
+    },
+    {
+      id: 'api',
+      title: 'Backend y APIs',
+      description: 'Desarrollo e integración de APIs, bases de datos y funcionalidades para aplicaciones web.',
+    },
+  ],
+
   featuredProject: {
     id: 'betterme',
     name: 'BetterMe',
@@ -142,7 +165,9 @@ export const portfolioContent: Portfolio = {
         'Incluye un panel de cocina con roles de empleado y administrador para gestionar pedidos y productos. Construida con Clean Architecture en el frontend y el backend, con pruebas automatizadas e integración continua.',
       ],
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework Core', 'SignalR', 'JWT'],
+      demoUrl: 'https://burger-cravvy-fullstack.pages.dev/',
       repositoryUrl: 'https://github.com/Angelismejia/burger-cravvy-fullstack',
+      coverImage: 'images/proyectos/burger-cravvy.webp',
     },
     {
       id: 'kapicua',
@@ -155,7 +180,25 @@ export const portfolioContent: Portfolio = {
       technologies: ['Flutter', 'Dart', 'Firebase Authentication', 'Firestore', 'Provider', 'Clean Architecture'],
       demoUrl: 'https://kapicua.web.app/',
       repositoryUrl: 'https://github.com/Angelismejia/kapicua',
+      coverImage: 'images/proyectos/kapicua.webp',
     },
+    {
+      id: 'dulce-encargo',
+      name: 'Dulce Encargo',
+      tagline: 'Pedidos para una repostería artesanal',
+      description: [
+        'App de pedidos para una repostería: catálogo de 62 postres con búsqueda y filtros, carrito, cupones de descuento, favoritos e historial de pedidos.',
+        'El pedido se envía listo por WhatsApp. Funciona sin conexión gracias a Hive y se adapta a celular, tablet y escritorio.',
+      ],
+      technologies: ['Flutter', 'Dart', 'Provider', 'Hive', 'Material 3', 'Firebase Hosting'],
+      demoUrl: 'https://dulce-encargo.web.app/',
+      repositoryUrl: 'https://github.com/Angelismejia/dulce_encargo_app',
+      coverImage: 'images/proyectos/dulce-encargo.webp',
+    },
+  ],
+
+  // Aparecen al tocar la flecha de "Más proyectos"
+  extraProjects: [
     {
       id: 'prediccion-texto',
       name: 'Sistema de Predicción de Texto Especulativo',
@@ -176,6 +219,7 @@ export const portfolioContent: Portfolio = {
         'JavaScript',
       ],
       repositoryUrl: 'https://github.com/Angelismejia/buscador-paralelo-especulativo',
+      coverImage: 'images/proyectos/prediccion-texto.webp',
     },
   ],
 

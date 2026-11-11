@@ -6,6 +6,8 @@ export interface Project {
   technologies: string[]
   demoUrl?: string
   repositoryUrl?: string
+  /** Captura horizontal (16:9) dentro de public/ para la portada de la tarjeta. Sin ella se muestra el nombre sobre un color */
+  coverImage?: string
 }
 
 // Proyecto principal: se presenta en grande, con capturas que se desplazan

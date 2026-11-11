@@ -2,6 +2,7 @@ import type { Certification, Education } from './Education'
 import type { Experience } from './Experience'
 import type { Profile } from './Profile'
 import type { FeaturedProject, Project } from './Project'
+import type { Service } from './Service'
 import type { SkillGroup } from './SkillGroup'
 
 export interface Learning {
@@ -24,8 +25,11 @@ export interface Portfolio {
   profile: Profile
   experiences: Experience[]
   skillGroups: SkillGroup[]
+  services: Service[]
   featuredProject: FeaturedProject
   projects: Project[]
+  /** Proyectos que aparecen al tocar la flecha, debajo de los demás */
+  extraProjects: Project[]
   education: Education[]
   certifications: Certification[]
   learning: Learning
