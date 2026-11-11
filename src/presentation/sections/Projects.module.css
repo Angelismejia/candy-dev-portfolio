@@ -59,7 +59,27 @@
   box-shadow: 0 18px 40px rgba(40, 20, 70, 0.14);
 }
 
-/* Portada de color con el nombre del proyecto */
+/* Portada con la captura del proyecto (16:9, se ve la parte de arriba de la página) */
+.shot {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--lavender);
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: scale 0.4s ease;
+}
+
+.project:hover .shot img {
+  scale: 1.04;
+}
+
+/* Sin captura: portada de color con el nombre del proyecto */
 .cover {
   display: grid;
   place-items: center;
@@ -122,6 +142,86 @@
 /* los botones quedan siempre abajo de la tarjeta, a la misma altura */
 .actions {
   margin-top: auto;
+}
+
+/* Flecha que muestra los proyectos extra */
+.toggleRow {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(32px, 5vw, 44px);
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  background: none;
+  cursor: pointer;
+}
+
+.arrowIcon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: var(--white);
+  background-color: var(--brand);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, background-color 0.2s ease;
+}
+
+.arrow:hover .arrowIcon,
+.arrow:focus-visible .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* abierta: la flecha gira y apunta hacia la izquierda, de donde salió la tarjeta */
+.arrowOpen .arrowIcon,
+.arrowOpen:hover .arrowIcon,
+.arrowOpen:focus-visible .arrowIcon {
+  transform: rotate(180deg);
+  background-color: var(--ink-bg);
+}
+
+.extraGrid {
+  /* auto-fill guarda el espacio de las columnas vacías: la tarjeta extra mide igual que las demás */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 310px), 1fr));
+  margin-top: 28px;
+}
+
+/* .grid pone display: grid, que le ganaría al atributo hidden */
+.extraGrid[hidden] {
+  display: none;
+}
+
+/* cada tarjeta extra entra deslizándose desde la izquierda */
+.slideIn {
+  animation: slide-in-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slideIn {
+    animation: none;
+  }
 }
 
 /* "Ver más en GitHub", centrado debajo de las tarjetas */

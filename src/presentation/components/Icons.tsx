@@ -125,3 +125,32 @@ export const DownloadIcon = (props: IconProps) => (
     <path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" />
   </Svg>
 )
+
+export const ArrowRightIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </Svg>
+)
+
+export const MonitorIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <rect x="3" y="4" width="18" height="12" rx="2" />
+    <path d="M8 20h8M12 16v4" />
+  </Svg>
+)
+
+export const CatalogIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M6 8h12l-1 12H7L6 8z" />
+    <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+  </Svg>
+)
+
+export const AppIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <rect x="3" y="3" width="7" height="7" rx="1.5" />
+    <rect x="14" y="3" width="7" height="7" rx="1.5" />
+    <rect x="3" y="14" width="7" height="7" rx="1.5" />
+    <path d="M17.5 14v7M14 17.5h7" />
+  </Svg>
+)
