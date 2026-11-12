@@ -9,6 +9,7 @@ const es = {
   },
   nav: {
     about: 'Sobre mí',
+    services: 'Servicios',
     experience: 'Experiencia',
     projects: 'Proyectos',
     education: 'Educación',
@@ -42,6 +43,12 @@ const es = {
     highlights: 'Lo que hice:',
     technologies: 'Tecnologías:',
   },
+  services: {
+    title: '¿En qué puedo ayudarte?',
+    intro: 'Te ayudo a llevar tu idea a internet: desde la página de tu negocio hasta el sistema que lo hace funcionar.',
+    ctaText: '¿Tienes un proyecto en mente?',
+    cta: 'Hablemos',
+  },
   projects: {
     section: 'Proyectos',
     featured: 'Proyecto destacado',
@@ -56,6 +63,9 @@ const es = {
     codeOf: (name: string) => `Ver el código de ${name} en GitHub`,
     screenshots: (name: string) => `Capturas de ${name}`,
     screenshot: 'Captura',
+    coverOf: (name: string) => `Captura de pantalla de ${name}`,
+    showExtra: 'Ver otro proyecto',
+    hideExtra: 'Ocultar',
     technologies: 'Tecnologías',
   },
   education: {
@@ -122,6 +132,7 @@ const en: UiText = {
   },
   nav: {
     about: 'About',
+    services: 'Services',
     experience: 'Experience',
     projects: 'Projects',
     education: 'Education',
@@ -155,6 +166,12 @@ const en: UiText = {
     highlights: 'What I did:',
     technologies: 'Technologies:',
   },
+  services: {
+    title: 'How can I help you?',
+    intro: 'I help you bring your idea online: from your business website to the system that keeps it running.',
+    ctaText: 'Have a project in mind?',
+    cta: "Let's talk",
+  },
   projects: {
     section: 'Projects',
     featured: 'Featured project',
@@ -169,6 +186,9 @@ const en: UiText = {
     codeOf: (name: string) => `View ${name} code on GitHub`,
     screenshots: (name: string) => `${name} screenshots`,
     screenshot: 'Screenshot',
+    coverOf: (name: string) => `${name} screenshot`,
+    showExtra: 'See another project',
+    hideExtra: 'Hide',
     technologies: 'Technologies',
   },
   education: {

@@ -11,6 +11,7 @@ import { ExperienceSection } from './sections/ExperienceSection'
 import { Hero } from './sections/Hero'
 import { Learning } from './sections/Learning'
 import { Projects } from './sections/Projects'
+import { Services } from './sections/Services'
 import { TechStack } from './sections/TechStack'
 
 export function App() {
@@ -29,10 +30,12 @@ export function App() {
         <Hero profile={portfolio.profile} />
         <About profile={portfolio.profile} />
         <TechStack skillGroups={portfolio.skillGroups} />
+        <Services services={portfolio.services} />
         <ExperienceSection experiences={portfolio.experiences} />
         <Projects
           featured={portfolio.featuredProject}
           projects={portfolio.projects}
+          extraProjects={portfolio.extraProjects}
           githubUrl={portfolio.profile.social.github}
         />
         <EducationSection education={portfolio.education} certifications={portfolio.certifications} />

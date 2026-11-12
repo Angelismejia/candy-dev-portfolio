@@ -6,6 +6,7 @@ import styles from './Navbar.module.css'
 
 const links = [
   { href: '#sobre-mi', key: 'about' },
+  { href: '#servicios', key: 'services' },
   { href: '#experiencia', key: 'experience' },
   { href: '#proyectos', key: 'projects' },
   { href: '#formacion', key: 'education' },
