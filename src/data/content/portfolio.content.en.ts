@@ -8,8 +8,8 @@ export const portfolioContentEn: Portfolio = {
     ...es.profile,
     cvPath: 'cv-candy-mejia-en.pdf',
     summary: [
-      'Software Developer graduated from ITLA, with experience in frontend and backend development.',
-      'I enjoy learning, working as part of a team, exploring new technologies and turning ideas into real solutions.',
+      'Software Developer graduated from ITLA, with experience in frontend and backend.',
+      "I'm passionate about turning ideas into digital solutions, building functional applications and continuing to grow professionally.",
     ],
     about: [
       "I'm a Junior Software Developer graduated from the Instituto Tecnológico de Las Américas (ITLA), with 8 months of hands-on experience gained at two companies.",

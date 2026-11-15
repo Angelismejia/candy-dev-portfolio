@@ -9,8 +9,8 @@ export const portfolioContent: Portfolio = {
     initials: 'CM',
     role: 'Junior Software Developer',
     summary: [
-      'Desarrolladora de Software egresada del ITLA, con experiencia en desarrollo frontend y backend.',
-      'Me gusta aprender, trabajar en equipo, conocer nuevas tecnologías y convertir ideas en soluciones reales.',
+      'Desarrolladora de Software egresada del ITLA, con experiencia en frontend y backend.',
+      'Me apasiona transformar ideas en soluciones digitales, crear aplicaciones funcionales y seguir creciendo profesionalmente.',
     ],
     about: [
       'Soy Desarrolladora de Software Junior egresada del Instituto Tecnológico de Las Américas (ITLA), con 8 meses de experiencia práctica adquirida en dos empresas.',
@@ -231,7 +231,7 @@ export const portfolioContent: Portfolio = {
       institutionUrl: 'https://educapermanente.itla.edu.do/',
       description:
         'Formación en desarrollo frontend y backend, programación orientada a objetos, bases de datos, APIs, arquitectura de software y desarrollo de aplicaciones.',
-      period: '2023 – 2025',
+      period: '2023 – 2026',
     },
   ],
 
