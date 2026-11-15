@@ -44,7 +44,8 @@ export function Services({ services }: ServicesProps) {
         </ul>
 
         <div className={styles.cta} data-reveal>
-          <p>{t.services.ctaText}</p>
+          <h3>{t.services.ctaText}</h3>
+          <p>{t.services.ctaDetail}</p>
           <a className="btn btn-solid" href="#hablemos">
             {t.services.cta}
           </a>

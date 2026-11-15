@@ -126,9 +126,10 @@ export const DownloadIcon = (props: IconProps) => (
   </Svg>
 )
 
-export const ArrowRightIcon = (props: IconProps) => (
+// Flechita fina (para el carrusel de proyectos)
+export const ChevronIcon = ({ direction = 'right', ...props }: IconProps & { direction?: 'left' | 'right' }) => (
   <Svg {...props}>
-    <path d="M5 12h14M13 6l6 6-6 6" />
+    <path d={direction === 'left' ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'} />
   </Svg>
 )
 

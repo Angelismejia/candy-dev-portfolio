@@ -1,8 +1,7 @@
-import { useState, type CSSProperties } from 'react'
+import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import type { FeaturedProject as FeaturedProjectContent, Project } from '../../domain/entities/Project'
-import { ArrowRightIcon, GitHubIcon } from '../components/Icons'
+import { ChevronIcon, GitHubIcon } from '../components/Icons'
 import { ProjectLinks, TechChips } from '../components/ProjectLinks'
-import { revealDelay } from '../hooks/useRevealOnScroll'
 import { publicAsset } from '../hooks/usePortfolio'
 import { FeaturedProject } from './FeaturedProject'
 import { useLanguage } from '../i18n/language'
@@ -17,7 +16,6 @@ interface ProjectsProps {
 
 export function Projects({ featured, projects, extraProjects, githubUrl }: ProjectsProps) {
   const { t } = useLanguage()
-  const [showExtra, setShowExtra] = useState(false)
 
   return (
     <section id="proyectos" className={`section-divider ${styles.section}`} aria-label={t.projects.section}>
@@ -32,44 +30,7 @@ export function Projects({ featured, projects, extraProjects, githubUrl }: Proje
           {t.projects.more}
         </h2>
 
-        <div className={styles.grid}>
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} reveal style={revealDelay(index, 0.15)} />
-          ))}
-        </div>
-
-        {extraProjects.length > 0 && (
-          <>
-            {/* la flecha muestra los proyectos extra, que entran deslizándose desde la izquierda */}
-            <div className={styles.toggleRow} data-reveal>
-              <button
-                type="button"
-                className={`${styles.arrow} ${showExtra ? styles.arrowOpen : ''}`}
-                aria-expanded={showExtra}
-                aria-controls="proyectos-extra"
-                onClick={() => setShowExtra((open) => !open)}
-              >
-                <span className={styles.arrowIcon}>
-                  <ArrowRightIcon size={22} />
-                </span>
-                {showExtra ? t.projects.hideExtra : t.projects.showExtra}
-              </button>
-            </div>
-
-            <div id="proyectos-extra" className={`${styles.grid} ${styles.extraGrid}`} hidden={!showExtra}>
-              {showExtra &&
-                extraProjects.map((project, index) => (
-                  <ProjectCard
-                    key={project.id}
-                    project={project}
-                    index={projects.length + index}
-                    className={styles.slideIn}
-                    style={revealDelay(index, 0.15)}
-                  />
-                ))}
-            </div>
-          </>
-        )}
+        <ProjectCarousel projects={projects} extraProjects={extraProjects} />
 
         {/* el resto de proyectos está en GitHub: lleva directo a la pestaña de repositorios */}
         <div className={styles.seeMore} data-reveal>
@@ -83,20 +44,90 @@ export function Projects({ featured, projects, extraProjects, githubUrl }: Proje
   )
 }
 
+interface ProjectCarouselProps {
+  projects: Project[]
+  extraProjects: Project[]
+}
+
+// Carrusel: los proyectos extra van al final, a la DERECHA, fuera de la vista.
+// Al abrir se ven los principales; la flechita de la derecha desliza y trae los extra.
+// Con el dedo (o el trackpad) también se desliza, gracias a scroll-snap.
+function ProjectCarousel({ projects, extraProjects }: ProjectCarouselProps) {
+  const { t } = useLanguage()
+  const trackRef = useRef<HTMLUListElement>(null)
+  const [canPrev, setCanPrev] = useState(false)
+  const [canNext, setCanNext] = useState(false)
+  const all = [...projects, ...extraProjects]
+
+  // ¿queda algo por ver a cada lado? (margen de 4 px por los redondeos del navegador)
+  const updateArrows = useCallback(() => {
+    const track = trackRef.current
+    if (!track) return
+    setCanPrev(track.scrollLeft > 4)
+    setCanNext(track.scrollLeft + track.clientWidth < track.scrollWidth - 4)
+  }, [])
+
+  // al cargar (y al cambiar el tamaño de la ventana) decide qué flechas se muestran
+  useLayoutEffect(() => {
+    updateArrows()
+    window.addEventListener('resize', updateArrows)
+    return () => window.removeEventListener('resize', updateArrows)
+  }, [updateArrows])
+
+  // avanza o retrocede una tarjeta
+  const slide = (direction: -1 | 1) => {
+    const track = trackRef.current
+    const card = track?.firstElementChild as HTMLElement | null
+    if (!track || !card) return
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0
+    track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' })
+  }
+
+  return (
+    <div className={styles.carousel} data-reveal>
+      <button
+        type="button"
+        className={`${styles.nav} ${styles.prev}`}
+        onClick={() => slide(-1)}
+        disabled={!canPrev}
+        aria-label={t.projects.previous}
+        aria-controls="carrusel-proyectos"
+      >
+        <ChevronIcon size={18} direction="left" />
+      </button>
+
+      <ul id="carrusel-proyectos" ref={trackRef} className={styles.track} onScroll={updateArrows}>
+        {all.map((project, index) => (
+          <li key={project.id} className={styles.slide}>
+            <ProjectCard project={project} index={index} />
+          </li>
+        ))}
+      </ul>
+
+      <button
+        type="button"
+        className={`${styles.nav} ${styles.next}`}
+        onClick={() => slide(1)}
+        disabled={!canNext}
+        aria-label={t.projects.next}
+        aria-controls="carrusel-proyectos"
+      >
+        <ChevronIcon size={18} direction="right" />
+      </button>
+    </div>
+  )
+}
+
 interface ProjectCardProps {
   project: Project
   index: number
-  className?: string
-  style?: CSSProperties
-  /** aparece con animación al hacer scroll (ver useRevealOnScroll) */
-  reveal?: boolean
 }
 
 // Tarjeta de proyecto: captura (o el nombre sobre un color) + texto, tecnologías y botones
-function ProjectCard({ project, index, className = '', style, reveal = false }: ProjectCardProps) {
+function ProjectCard({ project, index }: ProjectCardProps) {
   const { t } = useLanguage()
   return (
-    <article className={`${styles.project} ${className}`} data-reveal={reveal ? '' : undefined} style={style}>
+    <article className={styles.project}>
       {project.coverImage ? (
         <div className={styles.shot}>
           <img

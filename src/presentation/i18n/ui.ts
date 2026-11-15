@@ -47,6 +47,8 @@ const es = {
     title: '¿En qué puedo ayudarte?',
     intro: 'Te ayudo a llevar tu idea a internet: desde la página de tu negocio hasta el sistema que lo hace funcionar.',
     ctaText: '¿Tienes un proyecto en mente?',
+    ctaDetail:
+      'Si buscas una desarrolladora para tu equipo, necesitas una página web para tu negocio o tienes una idea que quieres convertir en realidad, ¡hablemos!',
     cta: 'Hablemos',
   },
   projects: {
@@ -64,8 +66,8 @@ const es = {
     screenshots: (name: string) => `Capturas de ${name}`,
     screenshot: 'Captura',
     coverOf: (name: string) => `Captura de pantalla de ${name}`,
-    showExtra: 'Ver otro proyecto',
-    hideExtra: 'Ocultar',
+    previous: 'Proyecto anterior',
+    next: 'Proyecto siguiente',
     technologies: 'Tecnologías',
   },
   education: {
@@ -107,6 +109,7 @@ const es = {
     sentText: 'Gracias por escribirme. Te responderé pronto a tu correo.',
     another: 'Enviar otro mensaje',
     subject: (name: string) => `Portafolio: mensaje de ${name}`,
+    emailSubject: 'Hola Candy, te escribo desde tu portafolio',
   },
   whatsapp: {
     label: 'Escríbeme por WhatsApp',
@@ -170,6 +173,8 @@ const en: UiText = {
     title: 'How can I help you?',
     intro: 'I help you bring your idea online: from your business website to the system that keeps it running.',
     ctaText: 'Have a project in mind?',
+    ctaDetail:
+      "Whether you're looking for a developer to join your team, need a website for your business or have an idea you want to bring to life, let's talk!",
     cta: "Let's talk",
   },
   projects: {
@@ -187,8 +192,8 @@ const en: UiText = {
     screenshots: (name: string) => `${name} screenshots`,
     screenshot: 'Screenshot',
     coverOf: (name: string) => `${name} screenshot`,
-    showExtra: 'See another project',
-    hideExtra: 'Hide',
+    previous: 'Previous project',
+    next: 'Next project',
     technologies: 'Technologies',
   },
   education: {
@@ -230,6 +235,7 @@ const en: UiText = {
     sentText: "Thanks for reaching out. I'll reply to your email soon.",
     another: 'Send another message',
     subject: (name: string) => `Portfolio: message from ${name}`,
+    emailSubject: 'Hi Candy, writing to you from your portfolio',
   },
   whatsapp: {
     label: 'Message me on WhatsApp',

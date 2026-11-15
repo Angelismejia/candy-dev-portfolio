@@ -38,12 +38,6 @@
   border-top: 1px solid var(--border);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
-  gap: 28px;
-}
-
 .project {
   display: flex;
   flex-direction: column;
@@ -144,83 +138,106 @@
   margin-top: auto;
 }
 
-/* Flecha que muestra los proyectos extra */
-.toggleRow {
+/* ---------- Carrusel de proyectos ---------- */
+.carousel {
+  --gap: 28px;
+  /* tarjetas visibles a la vez: 3 en computadora, 2 en tablet, 1 en celular */
+  --visible: 3;
+  position: relative;
+  /* deja medir el ancho del carrusel con cqw (lo usan las flechas en el celular) */
+  container-type: inline-size;
+}
+
+.track {
   display: flex;
-  justify-content: center;
-  margin-top: clamp(32px, 5vw, 44px);
+  gap: var(--gap);
+  /* espacio arriba y abajo para que no se corte la sombra ni el saltito del hover */
+  margin-block: -16px -40px;
+  padding-block: 16px 40px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
 }
 
-.arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-weight: 600;
-  color: var(--ink);
-  background: none;
-  cursor: pointer;
-}
-
-.arrowIcon {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  color: var(--white);
-  background-color: var(--brand);
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, background-color 0.2s ease;
-}
-
-.arrow:hover .arrowIcon,
-.arrow:focus-visible .arrowIcon {
-  transform: translateX(4px);
-}
-
-/* abierta: la flecha gira y apunta hacia la izquierda, de donde salió la tarjeta */
-.arrowOpen .arrowIcon,
-.arrowOpen:hover .arrowIcon,
-.arrowOpen:focus-visible .arrowIcon {
-  transform: rotate(180deg);
-  background-color: var(--ink-bg);
-}
-
-.extraGrid {
-  /* auto-fill guarda el espacio de las columnas vacías: la tarjeta extra mide igual que las demás */
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 310px), 1fr));
-  margin-top: 28px;
-}
-
-/* .grid pone display: grid, que le ganaría al atributo hidden */
-.extraGrid[hidden] {
+.track::-webkit-scrollbar {
   display: none;
 }
 
-/* cada tarjeta extra entra deslizándose desde la izquierda */
-.slideIn {
-  animation: slide-in-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--reveal-delay, 0s);
+.slide {
+  display: flex;
+  flex: 0 0 calc((100% - (var(--visible) - 1) * var(--gap)) / var(--visible));
+  scroll-snap-align: start;
 }
 
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-80px);
-  }
+.slide > .project {
+  flex: 1;
+}
 
-  to {
-    opacity: 1;
-    transform: none;
+/* Flechitas: pequeñas y discretas, a los lados de las tarjetas */
+.nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--brand);
+  background-color: var(--surface);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  translate: 0 -50%;
+  transition: opacity 0.25s ease, color 0.2s ease, background-color 0.2s ease, scale 0.2s ease;
+}
+
+.nav:hover,
+.nav:focus-visible {
+  scale: 1.08;
+  color: var(--white);
+  background-color: var(--brand);
+}
+
+/* sin nada más que ver hacia ese lado: la flecha desaparece */
+.nav:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.prev {
+  left: -19px;
+}
+
+.next {
+  right: -19px;
+}
+
+@media (max-width: 1024px) {
+  .carousel {
+    --visible: 2;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .slideIn {
-    animation: none;
+@media (max-width: 680px) {
+  .carousel {
+    --gap: 16px;
+    --visible: 1;
+  }
+
+  /* una tarjeta a la vez: las flechas van sobre la foto (16:9), no encima del texto */
+  .nav {
+    top: calc(100cqw * 9 / 32);
+  }
+
+  .prev {
+    left: -6px;
+  }
+
+  .next {
+    right: -6px;
   }
 }
 
