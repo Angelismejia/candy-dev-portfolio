@@ -1,4 +1,6 @@
 import { useRef, useState, type FormEvent } from 'react'
+import { openEmail } from './email'
+import { EmailLink } from './EmailLink'
 import { GitHubIcon, LinkedInIcon, MailIcon } from './Icons'
 import { useLanguage } from '../i18n/language'
 import styles from './ContactForm.module.css'
@@ -56,7 +58,7 @@ export function ContactForm({ email, linkedin, github, accessKey }: ContactFormP
     // Sin llave del servicio todavía: abre el correo con el mensaje ya escrito
     if (!accessKey) {
       const body = `${fields.message}\n\n— ${fields.name} · ${fields.email}`
-      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      openEmail({ to: email, subject, body })
       return
     }
 
@@ -142,7 +144,11 @@ export function ContactForm({ email, linkedin, github, accessKey }: ContactFormP
             )}
             {status === 'error' && (
               <p className={styles.error} role="alert">
-                {t.form.error} <a href={`mailto:${email}`}>{email}</a>.
+                {t.form.error}{' '}
+                <EmailLink to={email} subject={t.form.emailSubject}>
+                  {email}
+                </EmailLink>
+                .
               </p>
             )}
 
@@ -156,10 +162,10 @@ export function ContactForm({ email, linkedin, github, accessKey }: ContactFormP
           <p className={styles.asideText}>{t.form.intro}</p>
           <ul className={styles.links}>
             <li>
-              <a href={`mailto:${email}`}>
+              <EmailLink to={email} subject={t.form.emailSubject}>
                 <MailIcon size={22} />
                 {email}
-              </a>
+              </EmailLink>
             </li>
             <li>
               <a href={linkedin} target="_blank" rel="noopener noreferrer">

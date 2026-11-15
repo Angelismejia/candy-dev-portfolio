@@ -1,5 +1,6 @@
 import type { SocialLinks } from '../../domain/entities/Profile'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from './Icons'
+import { EmailLink } from './EmailLink'
 import { Logo } from './Logo'
 import { useLanguage } from '../i18n/language'
 import styles from './Footer.module.css'
@@ -50,9 +51,9 @@ export function Footer({ social }: FooterProps) {
             </li>
           )}
           <li>
-            <a href={`mailto:${social.email}`} aria-label={t.footer.email}>
+            <EmailLink to={social.email} subject={t.form.emailSubject} aria-label={t.footer.email}>
               <MailIcon size={20} />
-            </a>
+            </EmailLink>
           </li>
         </ul>
 
