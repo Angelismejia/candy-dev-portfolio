@@ -195,6 +195,31 @@ export const portfolioContent: Portfolio = {
       repositoryUrl: 'https://github.com/Angelismejia/dulce_encargo_app',
       coverImage: 'images/proyectos/dulce-encargo.webp',
     },
+    {
+      id: 'coolant-proniw',
+      name: 'Coolant Proniw',
+      tagline: 'Cliente real · Sitio en producción',
+      description: [
+        'Sitio web corporativo para Coolant Proniw, empresa dominicana que fabrica y distribuye refrigerantes para vehículos.',
+        'Muestra el catálogo de productos, la información de la empresa y contacto directo por WhatsApp para cotizar, con mapa, horario y diseño adaptado a celular.',
+      ],
+      technologies: ['ASP.NET Core MVC', 'C#', 'Razor', 'Bootstrap 5', 'JavaScript', 'SEO'],
+      // el repositorio es privado por confidencialidad del cliente: solo se enlaza el sitio
+      demoUrl: 'https://coolantproniw.com/',
+      coverImage: 'images/proyectos/coolant-proniw.webp',
+    },
+    {
+      id: 'islaride-pr',
+      name: 'IslaRide PR',
+      tagline: 'Landing page para transporte privado',
+      description: [
+        'Landing page para un servicio de transporte en Puerto Rico: traslados al aeropuerto, hoteles, playas y recorridos turísticos.',
+        'El formulario de reserva valida los datos y abre WhatsApp con el mensaje ya escrito. Pensada para celular, con botones rápidos para llamar, escribir o reservar.',
+      ],
+      technologies: ['HTML', 'Tailwind CSS', 'JavaScript', 'Netlify'],
+      demoUrl: 'https://islaride-pr.netlify.app/',
+      coverImage: 'images/proyectos/islaride-pr.webp',
+    },
   ],
 
   // Aparecen al tocar la flecha de "Más proyectos"

@@ -141,6 +141,22 @@ export const portfolioContentEn: Portfolio = {
         'Orders are sent ready-made through WhatsApp. It works offline thanks to Hive and adapts to phone, tablet and desktop.',
       ],
     },
+    {
+      ...es.projects[3],
+      tagline: 'Real client · Live site',
+      description: [
+        'Corporate website for Coolant Proniw, a Dominican company that manufactures and distributes vehicle coolants.',
+        'It shows the product catalog, company information and direct WhatsApp contact for quotes, with a map, opening hours and a mobile-friendly design.',
+      ],
+    },
+    {
+      ...es.projects[4],
+      tagline: 'Landing page for a private transport service',
+      description: [
+        'Landing page for a transport service in Puerto Rico: airport transfers, hotels, beaches and sightseeing tours.',
+        'The booking form validates the details and opens WhatsApp with the message already written. Built for mobile, with quick buttons to call, message or book.',
+      ],
+    },
   ],
 
   extraProjects: [
