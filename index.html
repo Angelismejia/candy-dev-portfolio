@@ -54,8 +54,16 @@
     </script>
 
     <script>
-        // Con JavaScript activo se muestra la pantalla de carga (splashScreen.ts la quita)
-        document.documentElement.classList.add('con-splash');
+        // Pantalla de carga solo en la primera página de la visita (splashScreen.ts la quita).
+        // Si alguien recarga o vuelve en la misma pestaña, entra directo.
+        try {
+            if (!sessionStorage.getItem('splash-visto')) {
+                document.documentElement.classList.add('con-splash');
+                sessionStorage.setItem('splash-visto', '1');
+            }
+        } catch (e) {
+            document.documentElement.classList.add('con-splash');
+        }
         // Aplica el tema y el idioma guardados antes de pintar, para que no parpadee
         try {
             var tema = localStorage.getItem('tema');

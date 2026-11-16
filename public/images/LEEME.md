@@ -1,9 +1,11 @@
 # Imágenes
 
 Pon aquí tus imágenes. Todo lo que está en `public/` se sirve tal cual.
+Usa formato `.webp`: pesa mucho menos que `.png` o `.jpg` y se ve igual.
 
-- `portada.png` → tu caricatura de portada (sale en la sección de Inicio).
-  - Recomendado: foto cuadrada o vertical, mínimo 800×800 px.
+- `portada-sin-fondo.webp` → tu caricatura de portada (sección de Inicio).
   - Si el archivo no existe, se muestran tus iniciales "CM" en su lugar.
-- `escritorio.png` → ilustración del escritorio (sale arriba de la franja "Sobre mí").
-  - Si el archivo no existe, simplemente no se muestra.
+- `escritorio-sin-fondo.webp` → ilustración del escritorio (arriba de la franja "Sobre mí").
+- `splash-gato.webp` → el gatito de la pantalla de carga.
+- `betterme/` → capturas del proyecto destacado (verticales, tipo celular).
+- `proyectos/` → portadas de las tarjetas de proyectos (horizontales, 1280×720).
