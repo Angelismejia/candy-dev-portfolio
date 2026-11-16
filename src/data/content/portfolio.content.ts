@@ -21,7 +21,7 @@ export const portfolioContent: Portfolio = {
     stats: [
       { value: '8', label: 'meses de experiencia' },
       { value: '2', label: 'empresas' },
-      { value: '3', label: 'proyectos destacados' },
+      { value: '7', label: 'proyectos destacados' },
     ],
     photoPath: 'images/portada-sin-fondo.webp',
     illustrationPath: 'images/escritorio-sin-fondo.webp',
@@ -77,15 +77,15 @@ export const portfolioContent: Portfolio = {
     },
     {
       id: 'frontend',
-      title: 'Frontend',
-      description: 'Creo interfaces claras y funcionales, pensando en la persona que las usa.',
-      skills: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
+      title: 'Frontend y móvil',
+      description: 'Creo interfaces claras y funcionales, en la web y en el celular, pensando en la persona que las usa.',
+      skills: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Flutter / Dart'],
     },
     {
       id: 'databases',
       title: 'Bases de datos',
       description: 'Conocimientos básicos en bases de datos relacionales y NoSQL.',
-      skills: ['SQL Server', 'MongoDB', 'Firebase / Firestore'],
+      skills: ['SQL Server', 'PostgreSQL', 'MongoDB', 'Firebase / Firestore', 'Hive'],
     },
     {
       id: 'tools',

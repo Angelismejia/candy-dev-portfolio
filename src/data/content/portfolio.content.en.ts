@@ -20,7 +20,7 @@ export const portfolioContentEn: Portfolio = {
     stats: [
       { value: '8', label: 'months of experience' },
       { value: '2', label: 'companies' },
-      { value: '3', label: 'featured projects' },
+      { value: '7', label: 'featured projects' },
     ],
   },
 
@@ -58,7 +58,8 @@ export const portfolioContentEn: Portfolio = {
     },
     {
       ...es.skillGroups[1],
-      description: 'I create clear, functional interfaces, designed around the people who use them.',
+      title: 'Frontend & mobile',
+      description: 'I create clear, functional interfaces for web and mobile, designed around the people who use them.',
     },
     {
       ...es.skillGroups[2],
