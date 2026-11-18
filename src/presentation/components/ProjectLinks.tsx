@@ -8,20 +8,18 @@ interface ProjectLinksProps {
   small?: boolean
 }
 
-// "Ver demo" + botón redondo de GitHub. Sin demo publicada se muestra "Demo pronto"
+// "Ver demo" + botón redondo de GitHub. Sin demo publicada solo queda GitHub
 export function ProjectLinks({ project, small = false }: ProjectLinksProps) {
   const { t } = useLanguage()
   const size = small ? 'btn-sm' : ''
 
   return (
     <div className={styles.links}>
-      {project.demoUrl ? (
+      {project.demoUrl && (
         <a className={`btn btn-solid ${size}`} href={project.demoUrl} target="_blank" rel="noopener noreferrer">
           <ExternalLinkIcon size={small ? 16 : 18} />
           {t.projects.demo}
         </a>
-      ) : (
-        <span className={`btn ${size} ${styles.soon}`}>{t.projects.demoSoon}</span>
       )}
 
       {project.repositoryUrl && (
