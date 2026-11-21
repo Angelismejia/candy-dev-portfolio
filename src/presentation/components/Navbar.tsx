@@ -24,14 +24,19 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Con el menú del celular abierto: no se mueve la página de fondo y Escape lo cierra
+  // Con el menú del celular abierto: no se mueve la página de fondo y Escape lo cierra.
+  // La clase "menu-open" en el body le avisa a otros componentes (ej. el botón de WhatsApp)
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
+    document.body.classList.toggle('menu-open', isOpen)
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setIsOpen(false)
     }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.classList.remove('menu-open')
+    }
   }, [isOpen])
 
   const close = () => setIsOpen(false)

@@ -91,6 +91,13 @@
   }
 }
 
+/* Con el menú del celular abierto se esconde, para no tapar el botón "Hablemos".
+   visibility (y no opacity) porque la animación popIn ya controla la opacidad */
+:global(body.menu-open) .button {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 @media (max-width: 600px) {
   .button {
     width: 54px;

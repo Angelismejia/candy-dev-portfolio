@@ -66,3 +66,11 @@
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.9);
 }
+
+/* En el celular el botón flotante de WhatsApp (54px + 20px de margen) quedaba
+   encima de los créditos: más espacio abajo para que el final se lea completo */
+@media (max-width: 600px) {
+  .footer {
+    padding-bottom: 104px;
+  }
+}
